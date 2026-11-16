@@ -1,4 +1,4 @@
-# HarborPay Demo - vendor evidence review
+# HarborPay Demo - TPRM vendor risk assessment and due-diligence review
 
 **SYNTHETIC TRAINING DATA.** HarborPay Demo, its payroll service, evidence, roles, dates, and control states are fictional. This questionnaire is a study aid, not a supplier attestation, audit opinion, certification, or legal determination.
 

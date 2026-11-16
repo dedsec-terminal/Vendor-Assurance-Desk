@@ -1,6 +1,6 @@
 # HarborPay Demo - provisional decision memo
 
-**SYNTHETIC TRAINING CASE - NOT A REAL VENDOR ASSESSMENT**<br>
+**SYNTHETIC TRAINING CASE - NOT A REAL THIRD-PARTY RISK ASSESSMENT**<br>
 Assessment date: 16 November 2026<br>
 Prepared for: fictional payroll service owner<br>
 Prepared by: analyst role in the training case<br>

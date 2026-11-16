@@ -1,4 +1,4 @@
-# Vendor onboarding recommendation
+# Vendor risk assessment and onboarding recommendation
 
 **SYNTHETIC TRAINING CASE**
 
@@ -8,11 +8,13 @@ Vendor: HarborPay Demo | Assessed: 2026-11-16
 
 Payroll processes employee identity and bank details. Current supplier assurance is not established, so the recommended lab decision is to hold onboarding pending review.
 
-## Findings and responsibilities
+## Risk register findings and responsibilities
 
 - **Current in-scope ISO assurance evidence unavailable** - Open. Stated validity ended 2026-10-31; current assurance evidence is unavailable. Owner: Vendor relationship owner (fictional role); due: 2026-11-23. Evidence: E01.
 - **Assurance summary does not initially cover payroll processing** - Ready for review. Revised declared scope includes payroll; this check does not authenticate or fully review a SOC report. Owner: Vendor relationship owner (fictional role); due: 2026-11-23. Evidence: E02-v2.
 - **Customer-side MFA requirement unmet in the initial lab state** - Ready for review. The revised mock configuration states MFA is enabled; real enforcement is not verified. Owner: Customer IAM owner (fictional role); due: 2026-11-20. Evidence: E03-v2.
+
+The exported risk register records each finding's status, owner, due date, baseline/retest evidence and required action. Business risk ratings remain unrated pending reviewer judgment; this synthetic third-party risk management (TPRM) exercise does not approve vendor onboarding.
 
 ## Decision conditions
 

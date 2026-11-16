@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f6f3">
-  <title>Vendor Assurance Desk — HarborPay Demo</title>
+  <title>Third-Party Risk Assessment | Vendor Assurance Desk — HarborPay Demo</title>
+  <meta name="description" content="Synthetic third-party risk management (TPRM) case study with vendor due diligence, evidence review, findings, remediation tracking and risk register export.">
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
 </head>
@@ -28,7 +29,7 @@
         <button class="nav-item" type="button" data-view="decision"><span class="nav-icon" aria-hidden="true">↗</span>Decision</button>
         <button class="nav-item" type="button" data-view="results"><span class="nav-icon" aria-hidden="true">◷</span>Results</button>
       </nav>
-      <a class="review-link" href="./review/index.html">Read the due-diligence case →</a>
+      <a class="review-link" href="./review/index.html">Read the vendor risk assessment →</a>
       <div class="sidebar-bottom">
         <div class="platform-box">
           <div class="platform-heading"><span class="status-dot" aria-hidden="true"></span><span>GRC platform</span></div>
@@ -42,7 +43,7 @@
 
     <main class="main">
       <header class="topbar">
-        <div class="breadcrumbs"><span>Third party risk</span><span class="crumb-sep">/</span><strong id="breadcrumb-vendor">HarborPay Demo</strong></div>
+        <div class="breadcrumbs"><span>Third-party risk management (TPRM)</span><span class="crumb-sep">/</span><strong id="breadcrumb-vendor">HarborPay Demo</strong></div>
         <div class="top-actions">
           <span class="saved-status" id="load-status"><span class="saved-dot" aria-hidden="true"></span>Loading assessment</span>
           <button class="icon-button" id="presentation-toggle" type="button" aria-pressed="false" title="Toggle presentation mode"><span aria-hidden="true">⛶</span><span class="presentation-label">Present</span></button>
@@ -54,7 +55,7 @@
 
       <section class="view active" id="view-overview" aria-labelledby="page-title-overview">
         <div class="page-heading">
-          <div><div class="eyebrow">VENDOR ASSESSMENT <span class="eyebrow-sep">·</span> <span id="case-date">16 Nov 2026</span></div><h1 id="page-title-overview">HarborPay Demo</h1><p class="page-subtitle" id="overview-subtitle">Payroll processing SaaS · High proposed criticality</p></div>
+          <div><div class="eyebrow">THIRD-PARTY RISK ASSESSMENT <span class="eyebrow-sep">·</span> <span id="case-date">16 Nov 2026</span></div><h1 id="page-title-overview">HarborPay Demo</h1><p class="page-subtitle" id="overview-subtitle">Payroll processing SaaS · Vendor risk assessment · High proposed criticality</p></div>
           <button class="button button-secondary" type="button" data-go="decision">Review recommendation <span aria-hidden="true">↗</span></button>
         </div>
 
@@ -81,7 +82,7 @@
 
         <div class="section-heading compact-heading"><div><div class="eyebrow">REVIEW PRIORITIES</div><h2>What needs attention</h2></div><span class="small-muted">Baseline assessment</span></div>
         <section class="priority-list" id="priority-list" aria-label="Open assessment priorities"><div class="empty-state">Loading findings…</div></section>
-        <footer class="page-foot"><span id="overview-scope">Assessment scope · Employee identity and payroll data</span><a href="./output/assessment.json" download>Export assessment <span aria-hidden="true">↓</span></a></footer>
+        <footer class="page-foot"><span id="overview-scope">Assessment scope · Employee identity and payroll data</span><span><a href="./output/risk_register.csv" download>Export risk register <span aria-hidden="true">↓</span></a> · <a href="./output/assessment.json" download>Export assessment <span aria-hidden="true">↓</span></a></span></footer>
       </section>
 
       <section class="view" id="view-evidence" aria-labelledby="page-title-evidence" hidden>
@@ -96,11 +97,11 @@
         <div class="finding-summary-row"><div><strong id="finding-count-label">3 findings</strong><span>Initial evidence review</span></div><div class="legend"><span><i class="legend-dot dot-open"></i>Open</span><span><i class="legend-dot dot-review"></i>Ready for review</span></div></div>
         <section class="finding-board" id="finding-board" aria-label="Vendor assessment findings"><div class="empty-state">Loading findings…</div></section>
         <div class="callout callout-neutral"><span class="callout-icon" aria-hidden="true">i</span><p><strong>Retest status is not closure.</strong> Revised synthetic evidence can qualify a finding for reviewer assessment. Record a reason and decision before closing any item.</p></div>
-        <footer class="page-foot"><span>Owners and due dates are fictional lab values.</span><a href="./output/risk_register.csv" download>Export risk register <span aria-hidden="true">↓</span></a></footer>
+        <footer class="page-foot"><span>CSV tracks finding ID, status, risk rating pending reviewer judgment, fictional owner, due date and follow-up action.</span><a href="./output/risk_register.csv" download>Export risk register <span aria-hidden="true">↓</span></a></footer>
       </section>
 
       <section class="view" id="view-controls" aria-labelledby="page-title-controls" hidden>
-        <div class="page-heading"><div><div class="eyebrow">SUPPLIER SCOPED REVIEW</div><h1 id="page-title-controls">Vendor IT controls</h1><p class="page-subtitle">Review control questions against the HarborPay payroll service and its evidence.</p></div><span class="pill pill-synthetic">Reference mappings · human review</span></div>
+        <div class="page-heading"><div><div class="eyebrow">VENDOR DUE DILIGENCE</div><h1 id="page-title-controls">Vendor IT controls</h1><p class="page-subtitle">Review control questions against the HarborPay payroll service and its evidence.</p></div><span class="pill pill-synthetic">Reference mappings · human review</span></div>
         <div class="callout callout-neutral control-purpose"><span class="callout-icon" aria-hidden="true">i</span><p><strong>What this reviews:</strong> supplier governance, agreements, identity, change, monitoring, incident response, recovery and remediation. Each question is scoped to the service and data under review. Framework references guide the review; they do not certify compliance or imply formal equivalence.<br><span id="control-catalog-notice">Loading catalog note…</span></p></div>
         <section class="control-overview" id="control-coverage-summary" aria-label="Control review summary"><div class="empty-state">Loading control coverage…</div></section>
         <section class="section-block control-tests-section"><div class="section-heading"><div><div class="eyebrow">SAMPLE CONTROL TESTS</div><h2>ITGC test results</h2><p class="page-subtitle">Fictional vendor access, change and backup records, tested separately from the broader due diligence questions.</p></div><div class="segmented" role="group" aria-label="Control test results stage"><button class="segment active" type="button" data-control-stage="baseline" aria-pressed="true">Initial review</button><button class="segment" type="button" data-control-stage="retest" aria-pressed="false">Retest</button></div></div><div class="control-test-metrics" id="control-test-metrics"></div><div class="control-test-list" id="control-test-list"><div class="empty-state">Loading control test results…</div></div></section>

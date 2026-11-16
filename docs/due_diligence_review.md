@@ -1,6 +1,6 @@
-# HarborPay Demo — reasoned due-diligence review
+# HarborPay Demo — vendor risk assessment and due diligence
 
-**SYNTHETIC TRAINING CASE.** HarborPay Demo, its service, documents, roles, facts and control states are fictional. This is an analyst-work-product example, not an audit, vendor attestation, legal opinion, or actual supplier decision. Assessment date: **16 November 2026**. Prepared for a fictional payroll service owner; human approval is pending.
+**SYNTHETIC TRAINING CASE.** HarborPay Demo, its service, documents, roles, facts and control states are fictional. This vendor due-diligence review is a TPRM analyst-work-product example, not an audit, vendor attestation, legal opinion, or actual supplier decision. Assessment date: **16 November 2026**. Prepared for a fictional payroll service owner; human approval is pending.
 
 ## Decision in brief
 
@@ -44,6 +44,8 @@ The case concerns a payroll-processing SaaS handling employee identity, payroll 
 | `TPRM-REV-01` Findings and reassessment | `recommendation_draft.md` records three proposed findings and owners/dates; the decision and external feedback remain pending. E02-v2/E03-v2 are lab-only changes. | Record authorized disposition, evidence versions, risk rationale, accepted exceptions, action tracking, reassessment triggers and reviewer sign-off. Do not mark real closure from mock retests. | Risk owner + authorized reviewer; before production |
 
 ## Risk rationale and treatment register
+
+The generated [`output/risk_register.csv`](../output/risk_register.csv) records the three assessment findings with category, status, risk-rating field, owner, due date, evidence references and required action. Risk ratings remain unrated for reviewer judgment. This CSV export is separate from the three native findings in CISO Assistant; the two records are integrated through the verified platform sync described in [`platform_integration.md`](platform_integration.md).
 
 **Scenario:** privileged credential compromise or malicious/erroneous change exposes payroll identities and bank details, or disrupts payroll processing. This is a plausible threat scenario based on data sensitivity and service dependency, not an observed threat or incident. **Inherent likelihood: Medium (proposed qualitative rating)** because a cloud payroll service has remote access and administrative dependencies, but the packet contains no threat intelligence, attack-surface evidence or control testing to calibrate probability. **Inherent impact: High (proposed)** due to sensitive financial/personnel data and payroll availability consequences; business impact and legal obligations require owner validation. These ratings are prioritization judgments, not calculated metrics.
 

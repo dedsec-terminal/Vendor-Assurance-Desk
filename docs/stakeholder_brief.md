@@ -1,4 +1,4 @@
-# HarborPay Demo — stakeholder decision brief
+# HarborPay Demo — TPRM vendor risk assessment decision brief
 
 **Synthetic portfolio exercise · 16 November 2026 · Draft, approval pending**<br>
 All organizations, evidence, dates, roles and facts are fictional. This brief is not an actual vendor decision, audit, or supplier assurance opinion.

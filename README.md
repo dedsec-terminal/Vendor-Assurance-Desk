@@ -2,9 +2,9 @@
 
 **[Open the live dashboard](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/) · [Read the due-diligence case](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/site/review/) · [Follow the walkthrough](docs/demo_walkthrough.md)**
 
-A practical third-party cyber-risk case study: decide whether a fictional payroll supplier can be onboarded, explain the evidence gaps, assign responsibilities and reassess revised evidence.
+A practical **third-party risk management (TPRM)** case study: conduct a fictional payroll vendor risk assessment, review due-diligence evidence, document findings and remediation, and reassess revised evidence before an authorized onboarding decision.
 
-This project uses the completed open-source **CISO Assistant** GRC platform as its configuration base, with a separate vendor-review adapter, control catalog, synthetic test case and presentation dashboard. Our additions focus on supplier IT controls, evidence traceability and reassessment against related **NIST CSF 2.0** outcomes and **ISO/IEC 27001:2022** Annex A controls.
+This project uses the completed open-source **CISO Assistant** GRC platform as its configuration base, with a separate vendor due-diligence adapter, control catalog, synthetic test case and presentation dashboard. The workflow links vendor risk assessments to evidence, a CSV risk register, remediation follow-up and a decision brief. Review questions use related **NIST CSF 2.0** outcomes and **ISO/IEC 27001:2022** Annex A controls as topical references.
 
 The assessment runner and dashboard use one explicitly synthetic case with four baseline assurance records and two revisions, a ten-question supplier-control catalog and selected ITGC tests. The full local **CISO Assistant Community v4.3.2** Docker stack is running, with one supplier, one payroll service, one assessment and ten control records configured. The assessment remains `in_review` and controls remain `to_do`; peer feedback and the human onboarding decision remain pending.
 
@@ -47,7 +47,7 @@ Authenticated browser verification confirmed that HarborPay Demo appears in the 
 
 ### Native findings and evidence integration
 
-The Python review output is integrated into a native CISO Assistant Findings Assessment: **three findings, five evidence links and four finding-to-control relationships across three distinct controls**. All ten supplier-scope controls remain `to_do`, both assessment records remain `in_review`, and the onboarding recommendation remains a hold. Evidence inventory entries are marked `missing` because authentic supplier artifacts were not supplied; the source metadata and mock revisions remain explicitly synthetic.
+The Python review output is integrated into a native CISO Assistant Findings Assessment: **three findings, five evidence links and four finding-to-control relationships across three distinct controls**. Separately, `output/risk_register.csv` exports those three case findings with category, status, a risk-rating field (unrated pending reviewer judgment), owner, due date, evidence references and required action; it is a generated CSV report, not a second native CISO register. All ten supplier-scope controls remain `to_do`, both assessment records remain `in_review`, and the onboarding recommendation remains a hold. Evidence inventory entries are marked `missing` because authentic supplier artifacts were not supplied; the source metadata and mock revisions remain explicitly synthetic.
 
 The [integration guide](docs/platform_integration.md) explains the native object relationships, repeatable commands and limits. The [verified read-back snapshot](output/platform_sync.json) records case identity, canonical JSON source hashes and exact evidence/control links. The supplier assessment and findings register share stable case context; upstream has no direct foreign-key relationship between those assessment types. Repeat syncs preserve existing records and reject unexpected changes instead of approving findings automatically.
 
@@ -62,7 +62,7 @@ The runner identifies those three issues from structured evidence fields. It doe
 ## What is implemented
 
 - Evidence checks for identity, expiry, scope, report/policy age, required policy ownership and the customer-side MFA state.
-- An evidence-linked register with owners, due dates, required actions and baseline/retest reasons.
+- A CSV risk register with evidence-linked findings, owners, due dates and required actions, plus a separate native CISO Assistant findings register.
 - A baseline and one revision per evidence item; additional rounds are explicitly rejected rather than silently losing intermediate findings.
 - Review records bound to the case, vendor, service context, check version and exact evidence hashes. Changing the evidence or assessment context invalidates a previous closure.
 - CSV and JSON exports, a management decision memo and a responsive six-view dashboard with presentation mode.

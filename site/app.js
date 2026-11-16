@@ -113,7 +113,7 @@
     text("#breadcrumb-vendor", vendor.name);
     text("#page-title-overview", vendor.name);
     text("#case-date", asDate(data.assessment_date));
-    text("#overview-subtitle", `${safe(vendor.service)} · ${safe(data.criticality?.tier, "Criticality pending")} proposed criticality`);
+    text("#overview-subtitle", `${safe(vendor.service)} · Vendor risk assessment · ${safe(data.criticality?.tier, "Criticality pending")} proposed criticality`);
     text("#metric-owner", safe(vendor.business_owner, "Owner not assigned").replace(/\s*\(fictional role\)/i, ""));
     text("#overview-decision", data.recommendation?.status);
     text("#decision-status", data.recommendation?.status);

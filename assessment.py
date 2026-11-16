@@ -29,7 +29,7 @@ def read_json(path):
 
 def write_json(path, value):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 def validate_case(case):
@@ -230,14 +230,14 @@ def assess(case, oracle=None, reviews=None, platform=None):
 
 
 def render_memo(result):
-    lines = ["# Vendor onboarding recommendation", "", "**SYNTHETIC TRAINING CASE**", "",
+    lines = ["# Vendor risk assessment and onboarding recommendation", "", "**SYNTHETIC TRAINING CASE**", "",
              f"Vendor: {result['vendor']['name']} | Assessed: {result['assessment_date']}", "",
              f"## Recommendation: {result['recommendation']['status']}", "",
              "Payroll processes employee identity and bank details. Current supplier assurance is not established, so the recommended lab decision is to hold onboarding pending review.", "",
-             "## Findings and responsibilities", ""]
+             "## Risk register findings and responsibilities", ""]
     for f in result["findings"]:
         lines.append(f"- **{f['title']}** - {f['status']}. {f['retest_reason']} Owner: {f['owner']}; due: {f['due_date']}. Evidence: {f['retest_evidence_id']}.")
-    lines += ["", "## Decision conditions", ""] + [f"- {c}" for c in result["recommendation"]["conditions"]]
+    lines += ["", "The exported risk register records each finding's status, owner, due date, baseline/retest evidence and required action. Business risk ratings remain unrated pending reviewer judgment; this synthetic third-party risk management (TPRM) exercise does not approve vendor onboarding.", "", "## Decision conditions", ""] + [f"- {c}" for c in result["recommendation"]["conditions"]]
     lines += ["", "## Business tradeoff", "", "Holding onboarding delays the proposed supplier transition. Proceeding without adequate assurance would leave uncertainty over a sensitive payroll service. The business owner and authorized risk reviewer must decide whether to defer, obtain alternative evidence or approve a documented, time-limited exception.", "",
               "## Limits and next review", "", "All documents and configuration states are fictional. Metadata checks do not authenticate certificates, perform a complete SOC review or establish operating effectiveness. Reassess when current evidence arrives or service scope changes. No residual risk reduction or time saving is claimed.", "",
               "## Review status", "", "Human onboarding approval: pending. Peer/mentor feedback: pending. The automated retest cannot close a finding without an explicit, evidence-bound review record.", ""]
@@ -257,7 +257,7 @@ def export(result, output):
         for row in result["findings"]:
             # CSV formula injection protection for future user-supplied metadata.
             writer.writerow({k: ("'" + v if isinstance(v, str) and v.startswith(("=", "+", "-", "@")) else v) for k, v in row.items() if k in keys})
-    (output / "decision_memo.md").write_text(render_memo(result), encoding="utf-8")
+    (output / "decision_memo.md").write_text(render_memo(result), encoding="utf-8", newline="\n")
     if result.get("control_review"):
         write_json(output / "control_review.json", result["control_review"])
         coverage = {v["control_id"]: v for v in result["control_review"]["coverage"]}

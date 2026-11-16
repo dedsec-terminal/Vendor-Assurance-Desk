@@ -2,7 +2,7 @@
 
 ## Start with the business decision
 
-"I assessed whether a fictional payroll supplier could be onboarded. Because it handles employee identity and bank details, I reviewed whether its assurance evidence covered the purchased service and whether the customer had met its own responsibilities."
+"I completed a fictional third-party risk management vendor risk assessment for a payroll service. Because it handles employee identity and bank details, I reviewed whether the due-diligence evidence covered the purchased service and whether the customer had met its own responsibilities."
 
 ## Show the initial findings
 

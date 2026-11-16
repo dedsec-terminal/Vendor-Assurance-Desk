@@ -149,8 +149,8 @@ def main() -> None:
     review_path = root / "output/control_review.json"
     source_hashes = {path.name: canonical_json_sha256(path) for path in (assessment_path, review_path)}
     score = build(read_json(assessment_path), read_json(review_path), root / "output/platform_sync.json", source_hashes)
-    (root / "output/outcome_scorecard.json").write_text(json.dumps(score, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (root / "output/outcome_scorecard.md").write_text(render_markdown(score), encoding="utf-8")
+    (root / "output/outcome_scorecard.json").write_text(json.dumps(score, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    (root / "output/outcome_scorecard.md").write_text(render_markdown(score), encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

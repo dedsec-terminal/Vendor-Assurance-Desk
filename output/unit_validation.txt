@@ -42,6 +42,6 @@ test_stale_source_artifact_hash_is_invalid (test_scorecard.ScorecardTests.test_s
 test_wrong_case_hash_or_vendor_is_invalid_and_uncredited (test_scorecard.ScorecardTests.test_wrong_case_hash_or_vendor_is_invalid_and_uncredited) ... ok
 
 ----------------------------------------------------------------------
-Ran 42 tests in 0.662s
+Ran 42 tests in 0.697s
 
 OK

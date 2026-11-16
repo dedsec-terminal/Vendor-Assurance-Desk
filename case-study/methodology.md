@@ -2,7 +2,7 @@
 
 ## Boundary and purpose
 
-This is an explicitly synthetic case used to practise third-party cyber-risk review. It is not a certification, assurance report review, legal opinion, or real vendor decision. The purpose is to evaluate evidence against a stated service, surface uncertainty, assign follow-up, and make a documented recommendation for human review.
+This is an explicitly synthetic case used to practise third-party risk management (TPRM) and vendor risk assessment. It is not a certification, an authenticated assurance-report review, a legal opinion, or a real vendor decision. The purpose is to evaluate due-diligence evidence against a stated service, surface uncertainty, record findings and risk-register actions, and prepare a recommendation for human review.
 
 ## Evidence statuses
 

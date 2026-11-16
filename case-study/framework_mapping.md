@@ -2,9 +2,9 @@
 
 This is a focused third-party risk management (TPRM) question set for a specific service. TPRM assesses a supplier's controls, evidence and dependencies, then records the customer's own responsibilities and risk decision. Internal IT general controls (ITGC) examine the organization's own access, change and operations processes. The domains overlap, but scope and control owner must be recorded for every finding.
 
-## Supplier review questions
+## Vendor due-diligence assessment questions
 
-The catalog has 10 original questions covering supplier criticality, due diligence, agreements, subprocessors, IAM, change control, monitoring, incident coordination, recovery and reassessment. Each question links to related NIST CSF 2.0 outcomes and ISO/IEC 27001:2022 Annex A controls. See [`control_catalog.json`](control_catalog.json) for evidence examples and responsible roles.
+The vendor risk assessment has 10 questions covering criticality, due diligence, agreements, subprocessors, IAM, change control, monitoring, incident coordination, recovery and reassessment. Each question links to related NIST CSF 2.0 outcomes and ISO/IEC 27001:2022 Annex A controls. These are review references, not a claim of formal equivalence or supplier compliance. See [`control_catalog.json`](control_catalog.json) for evidence examples and responsible roles.
 
 | Supplier IT control area | NIST CSF 2.0 references | ISO/IEC 27001:2022 Annex A | Example evidence to review |
 |---|---|---|---|

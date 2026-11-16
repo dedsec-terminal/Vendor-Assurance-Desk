@@ -2,7 +2,7 @@
 
 ## The short description
 
-"I built a repeatable vendor-review case around a fictional payroll supplier. It identifies gaps in assurance scope, evidence validity and customer responsibilities, records who must resolve them, and reassesses revised evidence before a reviewer makes an onboarding decision."
+"I built a repeatable third-party risk management (TPRM) case around a fictional payroll vendor. The vendor risk assessment reviews assurance scope, evidence validity and customer responsibilities, records findings in a CSV risk register and a separate GRC-platform findings workflow, and reassesses revised evidence before a reviewer considers onboarding."
 
 ## Why the checks matter
 
@@ -16,7 +16,7 @@
 
 ## The technical contribution
 
-The Python engine evaluates structured evidence fields independently of the test answer key. It treats missing or malformed facts as unknown, validates entity/control identities and uses documented lab freshness thresholds. The register links a finding to the exact baseline and revised evidence hashes.
+The Python engine evaluates structured evidence fields independently of the test answer key. It treats missing or malformed facts as unknown, validates entity/control identities and uses documented lab freshness thresholds. The CSV risk register records baseline and revised evidence references, owner, due date and required action. Exact evidence hashes are retained in the JSON review provenance. The native CISO Assistant findings register is a separately configured platform record.
 
 Review records are tied to the case, vendor, service context, assessment date, check version and evidence. A review from a different case or an older document cannot silently close the current finding. The small engine explicitly supports two snapshots, avoiding an unsupported claim to a full assessment-history system.
 

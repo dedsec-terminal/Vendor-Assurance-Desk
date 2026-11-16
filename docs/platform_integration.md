@@ -1,4 +1,4 @@
-# Native CISO Assistant finding and evidence integration
+# Native CISO Assistant TPRM findings and evidence integration
 
 ## What it adds
 

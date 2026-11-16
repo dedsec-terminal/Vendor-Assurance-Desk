@@ -1,26 +1,40 @@
 {
   "name": "CISO Assistant Community",
-  "status": "configured_locally",
+  "status": "Running locally; synthetic supplier case configured",
   "configuration_executed": true,
-  "version": "upstream main snapshot (no release tag)",
-  "upstream_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8",
-  "database": "SQLite, local workspace only",
+  "version": "v4.3.2",
+  "upstream_commit": "be43dc61e336c557e975d943d4c88c7dc4825ae1",
+  "cloned_source_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8",
+  "runtime": "Docker Engine in Ubuntu 24.04 on WSL2",
+  "verified_at_utc": "2026-11-16T15:41:13Z",
+  "record_counts": {
+    "vendors": 1,
+    "services": 1,
+    "assessments": 1,
+    "applied_controls": 10
+  },
   "vendor_count": 1,
   "solution_count": 1,
   "assessment_count": 1,
   "applied_control_count": 10,
   "catalog_control_count": 10,
-  "frameworks_loaded": ["NIST CSF 2.0", "ISO/IEC 27001:2022"],
-  "service_started": false,
-  "frontend_started": false,
+  "frameworks_loaded": [
+    "NIST CSF 2.0",
+    "ISO/IEC 27001:2022"
+  ],
+  "service_started": true,
+  "frontend_started": true,
   "synthetic_data_only": true,
   "assessment_status": "in_review",
   "control_status": "to_do",
+  "execution_record": "../docker/status.json",
+  "native_snapshot": "native-status.json",
   "notes": [
-    "Seeded via CISO Assistant Django ORM in platform_seed.py; counts queried from the local database.",
-    "Framework associations are proposed references for scoping; they do not establish conformity or equivalence.",
-    "Native Windows migration used --skip-checks because upstream system checks require optional runtime integrations; no claim of a successful full app check or running web service.",
-    "Custom DOCX rendering fails closed on Windows because the upstream worker relies on POSIX resource limits.",
-    "The clone is upstream main commit 1f65dd3e, not release tag v4.3.2."
-  ]
+    "Docker health and Django checks passed. Authenticated browser login succeeded and the Entities view showed HarborPay Demo. HTTPS and Qdrant checks passed.",
+    "One fictional supplier, service and assessment were seeded through the Django ORM with ten proposed control records.",
+    "The assessment remains in_review and controls remain to_do; this is configuration evidence, not an audit conclusion or operating-effectiveness assessment.",
+    "Named volumes store runtime data inside WSL. Credentials, databases and upstream clone remain excluded from Git.",
+    "Earlier native Windows setup is retained separately in native-status.json."
+  ],
+  "authenticated_frontend_verified": true
 }

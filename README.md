@@ -1,10 +1,14 @@
 # Vendor Assurance Desk
 
+**[Open the live dashboard](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/) · [Read the decision memo](output/decision_memo.md) · [Follow the walkthrough](docs/demo_walkthrough.md)**
+
 A practical third-party cyber-risk case study: decide whether a fictional payroll supplier can be onboarded, explain the evidence gaps, assign responsibilities and reassess revised evidence.
 
 This project uses the completed open-source **CISO Assistant** GRC platform as its configuration base, with a separate vendor-review adapter, control catalog, synthetic test case and presentation dashboard. Our additions focus on supplier IT controls, evidence traceability and reassessment against related **NIST CSF 2.0** outcomes and **ISO/IEC 27001:2022** Annex A controls.
 
-The local assessment runner and dashboard are implemented. They use one explicitly synthetic case with four baseline assurance records and two revisions, plus a ten-question supplier-control catalog and selected ITGC tests. CISO Assistant's exact execution status is tracked in `platform/status.json`; peer feedback and the final human onboarding decision remain pending.
+The assessment runner and dashboard use one explicitly synthetic case with four baseline assurance records and two revisions, a ten-question supplier-control catalog and selected ITGC tests. The full local **CISO Assistant Community v4.3.2** Docker stack is running, with one supplier, one payroll service, one assessment and ten control records configured. The assessment remains `in_review` and controls remain `to_do`; peer feedback and the human onboarding decision remain pending.
+
+Verification includes **28 passing unit tests**, browser checks across all six views, three detected seeded assurance gaps with no clean-policy finding, and three detected ITGC exceptions with no clean comparison rows flagged. These measurements describe the synthetic fixtures rather than production accuracy or real risk reduction.
 
 ## Run the project
 
@@ -18,7 +22,22 @@ python serve.py
 
 Open **http://127.0.0.1:8765**. The viewer listens on loopback and exposes only its own static assets and selected reports. Stop it with Ctrl+C in its terminal. Use a different port with `python serve.py --port 8766` if necessary.
 
-The separate CISO Assistant runtime has its own dependencies. Read `platform/` documentation before starting it. The standalone viewer is not a CISO Assistant interface.
+### Run the full GRC platform
+
+The full platform runs locally in Docker inside Ubuntu 24.04 on WSL2. Follow the prerequisites in [docker/README.md](docker/README.md), then use:
+
+```powershell
+.\scripts\docker_ciso.ps1 -Action Up
+.\scripts\docker_ciso.ps1 -Action Seed
+.\scripts\docker_ciso.ps1 -Action Admin
+.\scripts\docker_ciso.ps1 -Action Test
+```
+
+Open `https://localhost:8443`. The script writes the generated login to an ignored local file. The public Pages site is the read-only assessment viewer; the authenticated CISO Assistant application stays on loopback. [docker/status.json](docker/status.json) records the checked services, image digests and configured records. The earlier native Windows setup is retained separately in [platform/native-status.json](platform/native-status.json).
+
+Authenticated browser verification confirmed that HarborPay Demo appears in the platform's Entities view. The screenshot below contains only the fictional case and disposable lab account.
+
+![HarborPay Demo configured in CISO Assistant](output/ciso_entities.png)
 
 ## The decision this project supports
 
@@ -77,6 +96,7 @@ The unit suite covers changed-vendor approvals, incorrect evidence identity, sta
 | `tests/` | Automated regression and browser checks |
 | `build_site.py`, `site/` | Portable read-only portfolio publication |
 | `platform/` | Separate upstream-platform runtime, configuration artifacts and execution status |
+| `docker/`, `scripts/docker_*` | Full local CISO Assistant stack, pinned images, seed and verification commands |
 | `docs/` | Walkthrough, coverage and completion evidence |
 
 ## The four learning areas

@@ -18,6 +18,7 @@ ROUTES = {
     "/output/decision_memo.md": ("output/decision_memo.md", "text/markdown; charset=utf-8"),
     "/output/control_review.json": ("output/control_review.json", "application/json; charset=utf-8"),
     "/output/control_matrix.csv": ("output/control_matrix.csv", "text/csv; charset=utf-8"),
+    "/output/ciso_entities.png": ("output/ciso_entities.png", "image/png"),
 }
 
 

@@ -344,10 +344,16 @@
   },
   "platform": {
     "name": "CISO Assistant Community",
-    "status": "configured_locally",
+    "status": "Running locally; synthetic supplier case configured",
     "configuration_executed": true,
-    "version": "upstream main snapshot (no release tag)",
-    "upstream_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8"
+    "version": "v4.3.2",
+    "upstream_commit": "be43dc61e336c557e975d943d4c88c7dc4825ae1",
+    "record_counts": {
+      "vendors": 1,
+      "services": 1,
+      "assessments": 1,
+      "applied_controls": 10
+    }
   },
   "input_sha256": "b54cc937f485ee5b0324fb436a34519e191865c1686565cefeb859c92a0172b4",
   "check_version": "1.1.0",

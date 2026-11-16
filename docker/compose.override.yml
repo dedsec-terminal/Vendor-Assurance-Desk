@@ -1,0 +1,28 @@
+services:
+  backend:
+    image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:420f03b0ace7caafc52d5a2d33027fa6efed986a9f6171fe06d5f1b94701fe35
+    volumes:
+      - ciso_db:/code/db
+  huey:
+    image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:420f03b0ace7caafc52d5a2d33027fa6efed986a9f6171fe06d5f1b94701fe35
+    volumes:
+      - ciso_db:/code/db
+  qdrant:
+    image: qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10
+    volumes:
+      - ciso_qdrant:/qdrant/storage
+  caddy:
+    image: caddy@sha256:0c994536bddb66445885237f1a5dcc1916bccea922661c76b4e9fc24061f9b52
+    volumes:
+      - ciso_caddy:/data/caddy
+  frontend:
+    image: ghcr.io/intuitem/ciso-assistant-community/frontend@sha256:ce4b8a62b391579c31dac06ff637eae1f5413e007f3f97e0b08cab3d93ef8701
+
+volumes:
+  ciso_db:
+    name: vendor-assurance-desk-ciso-db
+    external: true
+  ciso_qdrant:
+    name: vendor-assurance-desk-ciso-qdrant
+  ciso_caddy:
+    name: vendor-assurance-desk-ciso-caddy

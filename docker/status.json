@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-16T15:41:13Z",
+  "platform": "CISO Assistant Community",
+  "service_started": true,
+  "frontend_started": true,
+  "deployment": {
+    "runtime": "Docker Engine in Ubuntu 24.04 on WSL2",
+    "docker_engine": "29.1.3",
+    "docker_compose": "2.40.3+ds1-0ubuntu1~24.04.1",
+    "database": "SQLite",
+    "storage": "Docker named volumes in WSL Linux filesystem",
+    "web_url": "https://localhost:8443",
+    "bound_interfaces": ["127.0.0.1"],
+    "health": {
+      "backend": "healthy",
+      "frontend": "running",
+      "worker": "running",
+      "reverse_proxy": "running",
+      "qdrant": "running"
+    }
+  },
+  "version": {
+    "application": "v4.3.2",
+    "build": "be43dc61e336c557e975d943d4c88c7dc4825ae1",
+    "cloned_source_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8",
+    "images": {
+      "backend": "ghcr.io/intuitem/ciso-assistant-community/backend@sha256:420f03b0ace7caafc52d5a2d33027fa6efed986a9f6171fe06d5f1b94701fe35",
+      "frontend": "ghcr.io/intuitem/ciso-assistant-community/frontend@sha256:ce4b8a62b391579c31dac06ff637eae1f5413e007f3f97e0b08cab3d93ef8701",
+      "caddy": "caddy@sha256:0c994536bddb66445885237f1a5dcc1916bccea922661c76b4e9fc24061f9b52",
+      "qdrant": "qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10"
+    }
+  },
+  "configuration_executed": true,
+  "case": {
+    "case_id": "HPD-2026-001",
+    "fictional_data": true,
+    "vendor_ref": "VAD-SYN-VENDOR-001",
+    "vendor_name": "HarborPay Demo",
+    "solution_ref": "VAD-SYN-SVC-001",
+    "solution_name": "Payroll processing SaaS",
+    "assessment_count": 1,
+    "assessment_name": "VAD HarborPay synthetic supplier due diligence 2026-11",
+    "assessment_status": "in_review",
+    "proposed_tier": "Proposed High (lab)",
+    "vendor_count": 1,
+    "solution_count": 1,
+    "applied_control_count": 10,
+    "catalog_control_count": 10,
+    "applied_control_status": "to_do",
+    "nist_csf_2_0_library_loaded": true,
+    "iso_iec_27001_2022_library_loaded": true
+  },
+  "record_counts": {
+    "vendors": 1,
+    "solutions": 1,
+    "entity_assessments": 1,
+    "applied_controls": 10,
+    "catalog_controls": 10
+  },
+  "tests": {
+    "backend_health_api": {"result": "passed", "http_status": 200},
+    "django_system_check": {"result": "passed", "message": "System check identified no issues (1 silenced)."},
+    "frontend_via_caddy_https": {"result": "passed", "http_status": 302, "meaning": "Expected redirect to login page."},
+    "authenticated_frontend_login": {"result": "passed", "landing_page": "CISO Assistant | Analytics"},
+    "authenticated_entity_lookup": {"result": "passed", "http_status": 200, "page_title": "CISO Assistant | Entities", "harborpay_demo_visible": true},
+    "qdrant_local_api": {"result": "passed", "http_status": 200},
+    "tprm_migrations": {"result": "passed", "note": "Backend completed its full startup migration set before health turned healthy."}
+  },
+  "ui_evidence": "../output/ciso_entities.png",
+  "admin_credentials_file": "docker/runtime/.private/admin_credentials.txt",
+  "license": "AGPL-3.0"
+}

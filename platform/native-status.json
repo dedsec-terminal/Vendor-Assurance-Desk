@@ -1,0 +1,26 @@
+{
+  "name": "CISO Assistant Community",
+  "status": "configured_locally",
+  "configuration_executed": true,
+  "version": "upstream main snapshot (no release tag)",
+  "upstream_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8",
+  "database": "SQLite, local workspace only",
+  "vendor_count": 1,
+  "solution_count": 1,
+  "assessment_count": 1,
+  "applied_control_count": 10,
+  "catalog_control_count": 10,
+  "frameworks_loaded": ["NIST CSF 2.0", "ISO/IEC 27001:2022"],
+  "service_started": false,
+  "frontend_started": false,
+  "synthetic_data_only": true,
+  "assessment_status": "in_review",
+  "control_status": "to_do",
+  "notes": [
+    "Seeded via CISO Assistant Django ORM in platform_seed.py; counts queried from the local database.",
+    "Framework associations are proposed references for scoping; they do not establish conformity or equivalence.",
+    "Native Windows migration used --skip-checks because upstream system checks require optional runtime integrations; no claim of a successful full app check or running web service.",
+    "Custom DOCX rendering fails closed on Windows because the upstream worker relies on POSIX resource limits.",
+    "The clone is upstream main commit 1f65dd3e, not release tag v4.3.2."
+  ]
+}

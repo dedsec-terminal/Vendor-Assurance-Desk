@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parent
 PUBLIC_OUTPUTS = (
     "assessment.json", "results.json", "risk_register.csv", "decision_memo.md",
     "control_review.json", "control_matrix.csv", "unit_validation.json", "browser_validation.json",
+    "ciso_entities.png",
 )
 
 

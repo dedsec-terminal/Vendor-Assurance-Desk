@@ -1,0 +1,842 @@
+{
+  "case_id": "HPD-2026-001",
+  "assessment_date": "2026-11-16",
+  "vendor": {
+    "vendor_id": "V-HPD-001",
+    "name": "HarborPay Demo",
+    "fictional": true,
+    "service": "Payroll processing SaaS",
+    "business_owner": "Payroll service owner (fictional role)",
+    "data_categories": [
+      "employee identity data",
+      "payroll details",
+      "bank account details"
+    ],
+    "assessment_status": "Initial review - pending human decision",
+    "evidence_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E02-v2",
+      "E03-v2"
+    ]
+  },
+  "notice": "SYNTHETIC TRAINING DATA. HarborPay Demo and all service descriptions, evidence notes, people, control states, and remediation records in this case are fictional. These materials are not audit reports, certificates, attestation, or proof of a real vendor's security.",
+  "criticality": {
+    "tier": "High",
+    "reason": "Payroll is operationally important and processes sensitive employee information. Proposed tier requires reviewer confirmation."
+  },
+  "recommendation": {
+    "status": "Hold onboarding",
+    "rationale": "Current assurance remains unverified. Retest passes address selected synthetic checks and do not authorize onboarding.",
+    "conditions": [
+      "Obtain current, authentic, payroll-scoped assurance evidence.",
+      "Review the complete report, exceptions and customer responsibilities.",
+      "An authorized reviewer must record the final onboarding decision."
+    ],
+    "human_approval": "Pending"
+  },
+  "metrics": {
+    "seeded_gaps_detected": {
+      "actual": 3,
+      "expected": 3
+    },
+    "unexpected_gap_ids": [],
+    "missed_gap_ids": [],
+    "clean_fixture_findings": 0,
+    "owner_due_date_coverage": {
+      "actual": 3,
+      "expected": 3
+    },
+    "retest_checks_passed": {
+      "actual": 2,
+      "expected": 2
+    },
+    "reviewer_closures": 0,
+    "unresolved_evidence_gap_preserved": true,
+    "measurement_scope": "This labelled synthetic fixture and four selected metadata checks only."
+  },
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "version": 1,
+      "evidence_type": "certificate_metadata",
+      "label": "Fictional ISO/IEC 27001 certificate metadata",
+      "provided_by": "HarborPay Demo (fictional)",
+      "entity": "HarborPay Demo",
+      "service_scope": [
+        "Payroll processing"
+      ],
+      "standard": "ISO/IEC 27001 (metadata only)",
+      "valid_from": "2025-11-01",
+      "expiry_date": "2026-10-31",
+      "verified": false,
+      "content_notice": "Synthetic metadata only. No certificate image, issuer, accreditation claim, signature, or real attestation is represented.",
+      "review_note": "The stated date is before the assessment date. Treat this as a gap in current assurance evidence. It does not by itself show that a security control failed or that an incident occurred. Ask for current evidence and verify its issuer, entity, scope, and validity before relying on it.",
+      "initial_status": "Expired metadata; authenticity not verified"
+    },
+    {
+      "evidence_id": "E02",
+      "version": 1,
+      "evidence_type": "soc2_style_summary",
+      "label": "Fictional SOC 2-style summary - version 1",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "report_period_start": "2026-01-01",
+      "report_period_end": "2026-09-30",
+      "report_type": "Synthetic Type II-style summary; not a SOC report",
+      "system_scope": [
+        "Customer support portal"
+      ],
+      "excluded_services": [
+        "Payroll processing"
+      ],
+      "opinion": "Not provided",
+      "exceptions": "Not represented in this short synthetic summary",
+      "cuecs": "Not represented in this short synthetic summary",
+      "verified": false,
+      "content_notice": "Illustrative training summary only. It is not issued by an auditor and cannot substantiate a SOC 2 examination.",
+      "review_note": "The stated service boundary excludes the payroll service being assessed. A date range that appears recent cannot correct a service-scope mismatch.",
+      "initial_status": "Out of scope for the assessed service"
+    },
+    {
+      "evidence_id": "E03",
+      "version": 1,
+      "evidence_type": "cuec_requirement_and_mock_state",
+      "label": "Fictional customer responsibility note - version 1",
+      "provided_by": "Example employer (fictional)",
+      "control_id": "CUEC-ADMIN-MFA",
+      "responsibility_type": "Complementary user entity control (customer-operated)",
+      "requirement": "Require multi-factor authentication for privileged payroll administrator accounts before the service is used with employee data.",
+      "owner": "Customer IAM owner (fictional role)",
+      "mock_state": "Disabled in the fictional lab configuration",
+      "verified": false,
+      "content_notice": "Training requirement and mock state only; no actual employer or payroll system was inspected.",
+      "review_note": "The customer is responsible for implementing this condition in the fictional scenario. Do not attribute this gap to HarborPay's controls.",
+      "mfa_enabled": false
+    },
+    {
+      "evidence_id": "E04",
+      "version": 1,
+      "evidence_type": "policy_summary",
+      "label": "Fictional access policy summary - control check fixture",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "policy_owner": "Security policy owner (fictional role)",
+      "last_approved": "2026-10-01",
+      "review_frequency": "Quarterly access reviews",
+      "service_scope": [
+        "Payroll processing"
+      ],
+      "scope_match": true,
+      "required_policy_present": true,
+      "verified": false,
+      "content_notice": "Synthetic summary prepared as a clean test fixture; not a real approved vendor policy.",
+      "review_note": "This fixture should pass only the lab's documented presence, approval-date, and scope checks. It is not evidence that access reviews were performed effectively."
+    },
+    {
+      "evidence_id": "E02-v2",
+      "version": 2,
+      "supersedes": "E02",
+      "evidence_type": "soc2_style_summary",
+      "label": "Fictional SOC 2-style summary - version 2",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "report_period_start": "2026-01-01",
+      "report_period_end": "2026-09-30",
+      "report_type": "Synthetic Type II-style summary; not a SOC report",
+      "system_scope": [
+        "Customer support portal",
+        "Payroll processing"
+      ],
+      "excluded_services": [],
+      "opinion": "Not provided",
+      "exceptions": "Not represented in this short synthetic summary",
+      "cuecs": "Not represented in this short synthetic summary",
+      "verified": false,
+      "content_notice": "Synthetic revised training summary. It is not an auditor-issued report or actual assurance.",
+      "review_note": "For the lab retest, this version corrects the declared service-boundary field. Reviewer must keep assurance status provisional because authenticity, actual report wording, exceptions, and other report content are not available."
+    },
+    {
+      "evidence_id": "E03-v2",
+      "version": 2,
+      "supersedes": "E03",
+      "evidence_type": "cuec_mock_state",
+      "label": "Fictional MFA configuration screenshot description - version 2",
+      "provided_by": "Example employer (fictional)",
+      "control_id": "CUEC-ADMIN-MFA",
+      "responsibility_type": "Complementary user entity control (customer-operated)",
+      "requirement": "Require multi-factor authentication for privileged payroll administrator accounts before the service is used with employee data.",
+      "owner": "Customer IAM owner (fictional role)",
+      "mock_state": "Enabled in a labelled fictional lab configuration",
+      "verified": false,
+      "content_notice": "Mock configuration description only. No real system or screenshot was captured.",
+      "review_note": "For the lab retest only, this updated mock evidence supports passing the selected configuration-state check. A real review would verify the authentic system, covered accounts, enforcement, and relevant exceptions.",
+      "mfa_enabled": true
+    }
+  ],
+  "checks": {
+    "baseline": [
+      {
+        "check_id": "CERT-EXPIRY",
+        "evidence_id": "E01",
+        "category": "Assurance freshness",
+        "result": "gap",
+        "reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+        "evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5"
+      },
+      {
+        "check_id": "ASSURANCE-SCOPE",
+        "evidence_id": "E02",
+        "category": "Assurance scope",
+        "result": "gap",
+        "reason": "The declared assurance boundary excludes Payroll processing.",
+        "evidence_sha256": "c29974a4666b826576f0fa047ec441721ee9c448467dcd80743557622d8dcf7f"
+      },
+      {
+        "check_id": "CUSTOMER-MFA",
+        "evidence_id": "E03",
+        "category": "Customer responsibility",
+        "result": "gap",
+        "reason": "Required customer-operated administrator MFA is disabled in the mock configuration.",
+        "evidence_sha256": "182f8422e3ceb776436b3d54aecdc22025afa7b4698f292e7c36c6cf55faec72"
+      },
+      {
+        "check_id": "POLICY-CHECK",
+        "evidence_id": "E04",
+        "category": "Access policy",
+        "result": "pass",
+        "reason": "Policy presence, owner, approval date and payroll scope meet selected checks; operating effectiveness is not tested.",
+        "evidence_sha256": "bda65b108258c41021e66f6ed32174fc40fc234ae2f42e653d207115e3a97780"
+      }
+    ],
+    "retest": [
+      {
+        "check_id": "CERT-EXPIRY",
+        "evidence_id": "E01",
+        "category": "Assurance freshness",
+        "result": "gap",
+        "reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+        "evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5"
+      },
+      {
+        "check_id": "ASSURANCE-SCOPE",
+        "evidence_id": "E02-v2",
+        "category": "Assurance scope",
+        "result": "pass",
+        "reason": "Revised declared scope includes payroll; this check does not authenticate or fully review a SOC report.",
+        "evidence_sha256": "6098844610dbbabd2b0c75a3cf547c4201ef1f01c1b201ee7d51ff2298a4ae70"
+      },
+      {
+        "check_id": "CUSTOMER-MFA",
+        "evidence_id": "E03-v2",
+        "category": "Customer responsibility",
+        "result": "pass",
+        "reason": "The revised mock configuration states MFA is enabled; real enforcement is not verified.",
+        "evidence_sha256": "fbe67cba57fce25996d97fdc5bccd2781056dd5d63d097de0370182040a4b017"
+      },
+      {
+        "check_id": "POLICY-CHECK",
+        "evidence_id": "E04",
+        "category": "Access policy",
+        "result": "pass",
+        "reason": "Policy presence, owner, approval date and payroll scope meet selected checks; operating effectiveness is not tested.",
+        "evidence_sha256": "bda65b108258c41021e66f6ed32174fc40fc234ae2f42e653d207115e3a97780"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "CERT-EXPIRY",
+      "title": "Current in-scope ISO assurance evidence unavailable",
+      "category": "Assurance freshness",
+      "owner": "Vendor relationship owner (fictional role)",
+      "due_date": "2026-11-23",
+      "evidence_id": "E01",
+      "evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5",
+      "retest_evidence_id": "E01",
+      "retest_evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5",
+      "status": "Open",
+      "baseline_reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+      "retest_reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+      "required_action": "Obtain and authenticate current evidence, verify the entity and payroll scope, and record a reviewer decision.",
+      "risk_rating": "Unrated - reviewer judgment required"
+    },
+    {
+      "id": "ASSURANCE-SCOPE",
+      "title": "Assurance summary does not initially cover payroll processing",
+      "category": "Assurance scope",
+      "owner": "Vendor relationship owner (fictional role)",
+      "due_date": "2026-11-23",
+      "evidence_id": "E02",
+      "evidence_sha256": "c29974a4666b826576f0fa047ec441721ee9c448467dcd80743557622d8dcf7f",
+      "retest_evidence_id": "E02-v2",
+      "retest_evidence_sha256": "6098844610dbbabd2b0c75a3cf547c4201ef1f01c1b201ee7d51ff2298a4ae70",
+      "status": "Ready for review",
+      "baseline_reason": "The declared assurance boundary excludes Payroll processing.",
+      "retest_reason": "Revised declared scope includes payroll; this check does not authenticate or fully review a SOC report.",
+      "required_action": "Obtain an authentic report covering the purchased service and document the reviewer’s scope analysis.",
+      "risk_rating": "Unrated - reviewer judgment required"
+    },
+    {
+      "id": "CUSTOMER-MFA",
+      "title": "Customer-side MFA requirement unmet in the initial lab state",
+      "category": "Customer responsibility",
+      "owner": "Customer IAM owner (fictional role)",
+      "due_date": "2026-11-20",
+      "evidence_id": "E03",
+      "evidence_sha256": "182f8422e3ceb776436b3d54aecdc22025afa7b4698f292e7c36c6cf55faec72",
+      "retest_evidence_id": "E03-v2",
+      "retest_evidence_sha256": "fbe67cba57fce25996d97fdc5bccd2781056dd5d63d097de0370182040a4b017",
+      "status": "Ready for review",
+      "baseline_reason": "Required customer-operated administrator MFA is disabled in the mock configuration.",
+      "retest_reason": "The revised mock configuration states MFA is enabled; real enforcement is not verified.",
+      "required_action": "Before real use, the customer IAM owner should enable and verify MFA for all in-scope privileged accounts.",
+      "risk_rating": "Unrated - reviewer judgment required"
+    }
+  ],
+  "history": [
+    {
+      "event": "Finding recorded",
+      "finding_id": "CERT-EXPIRY",
+      "actor": "Automated metadata check",
+      "reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+      "stage": "baseline",
+      "evidence_id": "E01"
+    },
+    {
+      "event": "Finding recorded",
+      "finding_id": "ASSURANCE-SCOPE",
+      "actor": "Automated metadata check",
+      "reason": "The declared assurance boundary excludes Payroll processing.",
+      "stage": "baseline",
+      "evidence_id": "E02"
+    },
+    {
+      "event": "Retest passed; review required",
+      "finding_id": "ASSURANCE-SCOPE",
+      "actor": "Automated metadata check",
+      "reason": "Revised declared scope includes payroll; this check does not authenticate or fully review a SOC report.",
+      "stage": "retest",
+      "evidence_id": "E02-v2"
+    },
+    {
+      "event": "Finding recorded",
+      "finding_id": "CUSTOMER-MFA",
+      "actor": "Automated metadata check",
+      "reason": "Required customer-operated administrator MFA is disabled in the mock configuration.",
+      "stage": "baseline",
+      "evidence_id": "E03"
+    },
+    {
+      "event": "Retest passed; review required",
+      "finding_id": "CUSTOMER-MFA",
+      "actor": "Automated metadata check",
+      "reason": "The revised mock configuration states MFA is enabled; real enforcement is not verified.",
+      "stage": "retest",
+      "evidence_id": "E03-v2"
+    }
+  ],
+  "communication": {
+    "feedback_status": "Pending peer review",
+    "presentation": "docs/demo_walkthrough.md"
+  },
+  "platform": {
+    "name": "CISO Assistant Community",
+    "status": "configured_locally",
+    "configuration_executed": true,
+    "version": "upstream main snapshot (no release tag)",
+    "upstream_commit": "1f65dd3e23162c5d9da0efe83faf2d754a0205e8"
+  },
+  "input_sha256": "b54cc937f485ee5b0324fb436a34519e191865c1686565cefeb859c92a0172b4",
+  "check_version": "1.1.0",
+  "scope": "Synthetic training case; selected metadata checks only. Human approval required.",
+  "control_review": {
+    "catalog": {
+      "catalog_id": "VAD-TPRM-CONTROLS-1.0",
+      "title": "Third-party IT control review questions",
+      "purpose": "A focused learning catalog for reviewing supplier cyber-risk in a scoped service. These are original reviewer questions with proposed framework references, not a complete framework implementation.",
+      "notice": "A reference match is not proof of compliance or formal equivalence. Review the cited source controls and tailor questions to the service, data, contract, applicable law, and risk appetite.",
+      "frameworks": [
+        {
+          "id": "nist-csf-2.0",
+          "name": "NIST Cybersecurity Framework",
+          "version": "2.0",
+          "source_url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "id": "iso-iec-27001-2022",
+          "name": "ISO/IEC 27001 Information security management systems",
+          "version": "2022",
+          "source_url": "https://www.iso.org/standard/27001"
+        }
+      ],
+      "controls": [
+        {
+          "id": "TPRM-GOV-01",
+          "title": "Supplier criticality and pre-engagement due diligence",
+          "question": "Before onboarding, has the service owner explained the vendor's business importance, data handled, access, dependency concentration and consequences of interruption, then selected a proportionate assessment tier?",
+          "objective": "Prioritize diligence according to the vendor's service and potential impact, and retain the basis for the tier decision.",
+          "expected_evidence": [
+            "service and data flow description",
+            "business owner and criticality rationale",
+            "completed due-diligence review",
+            "assessment approval date and reviewer"
+          ],
+          "nist_csf": [
+            "GV.SC-04",
+            "GV.SC-06",
+            "ID.RA-10"
+          ],
+          "iso_27001": [
+            "A.5.19"
+          ],
+          "mapping_rationale": "Supplier inventory, criticality, pre-contract assessment and security in supplier relationships are closely related topics.",
+          "owner_role": "Vendor relationship owner with security reviewer"
+        },
+        {
+          "id": "TPRM-GOV-02",
+          "title": "Risk ownership and assessment lifecycle",
+          "question": "Is a named business owner accountable for the relationship, with security and procurement roles, review triggers, escalation, acceptance authority and reassessment frequency recorded?",
+          "objective": "Make ownership and review expectations explicit across selection, operation, material changes and exit.",
+          "expected_evidence": [
+            "assessment procedure or workflow",
+            "named roles and decision authority",
+            "review schedule and event-driven triggers",
+            "record of the last review"
+          ],
+          "nist_csf": [
+            "GV.SC-01",
+            "GV.SC-03",
+            "GV.SC-07"
+          ],
+          "iso_27001": [
+            "A.5.19",
+            "A.5.22"
+          ],
+          "mapping_rationale": "Program governance, enterprise risk integration, ongoing supplier risk monitoring and supplier service review support the question.",
+          "owner_role": "Business relationship owner"
+        },
+        {
+          "id": "TPRM-CON-01",
+          "title": "Security obligations in supplier agreements",
+          "question": "Does the agreement assign security duties and timelines for incident notice, access control, audit evidence, subcontracting, data return or deletion, continuity and material service changes?",
+          "objective": "Translate service-specific security requirements into responsibilities that can be checked during the relationship.",
+          "expected_evidence": [
+            "relevant contract or security schedule",
+            "shared responsibility matrix",
+            "incident notice and escalation terms",
+            "subcontracting and service-change clauses"
+          ],
+          "nist_csf": [
+            "GV.SC-05"
+          ],
+          "iso_27001": [
+            "A.5.20",
+            "A.5.21"
+          ],
+          "mapping_rationale": "Supplier requirements are established and included in agreements; supplier and ICT supply-chain responsibilities are related Annex A topics.",
+          "owner_role": "Procurement or legal owner with security reviewer"
+        },
+        {
+          "id": "TPRM-SUP-01",
+          "title": "ICT supply chain and subprocessors",
+          "question": "Can the supplier identify subprocessors and hosting dependencies that can access the service or data, show how security requirements flow down, and notify the customer of relevant changes?",
+          "objective": "Understand material downstream dependencies and how supply-chain risk is managed through the service lifecycle.",
+          "expected_evidence": [
+            "current subprocessor list and service roles",
+            "data or service flow diagram",
+            "flow-down security requirements",
+            "notification and change-review record"
+          ],
+          "nist_csf": [
+            "GV.SC-07",
+            "GV.SC-09"
+          ],
+          "iso_27001": [
+            "A.5.21",
+            "A.5.22",
+            "A.5.23"
+          ],
+          "mapping_rationale": "Supplier, ICT supply-chain and cloud-service security plus ongoing supplier risk monitoring are relevant references; applicability depends on the vendor service.",
+          "owner_role": "Vendor relationship owner with architecture or security reviewer"
+        },
+        {
+          "id": "TPRM-IAM-01",
+          "title": "Supplier workforce identity and privileged access",
+          "question": "How does the supplier authorize workforce access to this service, enforce MFA for privileged access, limit roles to least privilege, review permissions, and revoke access promptly when duties change or end?",
+          "objective": "Assess identity lifecycle and logical access controls for people who administer or support the scoped service.",
+          "expected_evidence": [
+            "access-control and authentication policy",
+            "privileged-access MFA coverage and exceptions",
+            "role and approval samples",
+            "periodic access-review and termination-revocation samples"
+          ],
+          "nist_csf": [
+            "PR.AA-03",
+            "PR.AA-05"
+          ],
+          "iso_27001": [
+            "A.5.15",
+            "A.5.16",
+            "A.5.18",
+            "A.8.5"
+          ],
+          "mapping_rationale": "Authentication (including MFA) and access permission management are related outcomes; inspect the supplier implementation and scoped workforce population.",
+          "owner_role": "Vendor IAM or security owner; customer reviewer"
+        },
+        {
+          "id": "TPRM-CHG-01",
+          "title": "Service configuration and change control",
+          "question": "Are changes to the supplier service and security configuration authorized, tested, logged, and reviewed, with emergency changes handled and material customer impact communicated?",
+          "objective": "Determine whether service changes can be traced from approval through testing and deployment, and whether customer risks are reviewed.",
+          "expected_evidence": [
+            "configuration-management standard",
+            "sample approved change records",
+            "test and deployment evidence",
+            "emergency-change and customer-notice examples"
+          ],
+          "nist_csf": [
+            "PR.PS-01",
+            "GV.SC-07"
+          ],
+          "iso_27001": [
+            "A.8.9",
+            "A.8.32",
+            "A.5.22"
+          ],
+          "mapping_rationale": "Configuration management and controlled changes support supplier-service security; monitor supplier service changes over time.",
+          "owner_role": "Vendor service or engineering owner"
+        },
+        {
+          "id": "TPRM-OPS-01",
+          "title": "Security logging and monitoring",
+          "question": "Does the supplier record and review security-relevant administrative and service activity, protect logs from inappropriate change, and detect and escalate events affecting this service or customer data?",
+          "objective": "Understand whether relevant events are recorded, monitored and made available for investigation under agreed terms.",
+          "expected_evidence": [
+            "logging and monitoring standard",
+            "log source and retention summary",
+            "sample alert or review record",
+            "customer notification or evidence-access process"
+          ],
+          "nist_csf": [
+            "DE.CM-03",
+            "DE.CM-09",
+            "GV.SC-07"
+          ],
+          "iso_27001": [
+            "A.8.15",
+            "A.8.16",
+            "A.5.22"
+          ],
+          "mapping_rationale": "Personnel and broader technology/runtime monitoring, logging, monitoring activities and supplier service reviews are related topics.",
+          "owner_role": "Vendor security operations owner"
+        },
+        {
+          "id": "TPRM-IR-01",
+          "title": "Incident coordination and customer notification",
+          "question": "Can the supplier identify service-impacting incidents, notify the customer within agreed timelines, preserve relevant evidence, coordinate investigations, and support recovery and lessons learned?",
+          "objective": "Check that incident responsibilities connect supplier response with the customer's response and recovery plans.",
+          "expected_evidence": [
+            "incident response plan and customer contact path",
+            "contractual notice timelines",
+            "redacted exercise or incident review",
+            "evidence preservation and coordination procedures"
+          ],
+          "nist_csf": [
+            "RS.MA-01",
+            "GV.SC-08"
+          ],
+          "iso_27001": [
+            "A.5.24",
+            "A.5.25",
+            "A.5.26",
+            "A.5.20"
+          ],
+          "mapping_rationale": "Incident preparation, event decisions, incident response, and coordination with relevant third parties are related controls; contract terms define customer notification expectations.",
+          "owner_role": "Vendor incident lead and customer incident coordinator"
+        },
+        {
+          "id": "TPRM-RES-01",
+          "title": "Backup, restoration and continuity evidence",
+          "question": "For the service and customer data, does the supplier define backup and restoration responsibilities, test recovery, protect restoration assets, and communicate material recovery dependencies or limitations?",
+          "objective": "Assess whether recovery claims are supported by service-specific evidence and shared responsibilities.",
+          "expected_evidence": [
+            "service continuity and recovery summary",
+            "backup scope and retention statement",
+            "redacted restore-test result and date",
+            "shared dependency or recovery objective record"
+          ],
+          "nist_csf": [
+            "PR.DS-11",
+            "RC.RP-03",
+            "GV.SC-07"
+          ],
+          "iso_27001": [
+            "A.8.13",
+            "A.5.30",
+            "A.5.22"
+          ],
+          "mapping_rationale": "Backup creation, protection and testing, recovery-asset integrity, ICT continuity readiness and ongoing supplier service review inform the assessment.",
+          "owner_role": "Vendor continuity owner with customer service owner"
+        },
+        {
+          "id": "TPRM-REV-01",
+          "title": "Findings, remediation and reassessment",
+          "question": "Are evidence gaps and control exceptions recorded with risk rationale, an accountable owner, due date, compensating measures where appropriate, reviewer decision and reassessment trigger?",
+          "objective": "Keep supplier risk decisions traceable from initial review through treatment and reassessment.",
+          "expected_evidence": [
+            "risk or findings register extract",
+            "remediation and exception records",
+            "reviewer approval with rationale",
+            "updated evidence and reassessment history"
+          ],
+          "nist_csf": [
+            "GV.SC-03",
+            "GV.SC-07"
+          ],
+          "iso_27001": [
+            "A.5.19",
+            "A.5.22"
+          ],
+          "mapping_rationale": "Supplier risks are recorded, prioritized, responded to and monitored; supplier relationships and services are reviewed over time.",
+          "owner_role": "Risk owner and authorized reviewer"
+        }
+      ]
+    },
+    "tests": {
+      "assessment_date": "2026-11-16",
+      "vendor_id": "V-HPD-001",
+      "vendor_name": "HarborPay Demo",
+      "notice": "SYNTHETIC TRAINING DATA. Vendor, personnel, transactions, control evidence and exceptions are fictional; no real supplier was assessed.",
+      "scope": "Three sample ITGC populations: terminated-user access, production change approval, backup completion and restore-test evidence.",
+      "framework_use": "Proposed related references only. This sample does not measure overall NIST CSF or ISO/IEC 27001 conformity.",
+      "human_review": "Pending; no exception is closed and no supplier onboarding decision is made by this runner.",
+      "controls": [
+        {
+          "id": "ITGC-ACCESS",
+          "title": "Vendor workforce access revocation",
+          "objective": "Access for terminated vendor personnel is revoked by termination and no later login is recorded.",
+          "owner": "Vendor identity and access owner (fictional role)",
+          "nist_csf": [
+            "PR.AA-05"
+          ],
+          "iso_27001": [
+            "A.5.18",
+            "A.8.2"
+          ],
+          "framework_note": "Related reference points for access rights and privileged access; this lab does not assess full framework conformity.",
+          "status": "gap",
+          "current_exposure_resolved": true,
+          "baseline_population": 2,
+          "baseline_exception_count": 1,
+          "retest_population": 2,
+          "baseline_exceptions": [
+            {
+              "record_id": "ACC-101",
+              "row": 2,
+              "fixture_role": "seeded_exception",
+              "reasons": [
+                "Evidence incomplete or malformed for access_removed_date: required field 'access_removed_date' is missing.",
+                "A login is recorded after termination.",
+                "Account is not recorded as disabled."
+              ],
+              "current_exposure_resolved": false
+            }
+          ],
+          "retest_exceptions": [
+            {
+              "record_id": "ACC-101",
+              "row": 2,
+              "fixture_role": "seeded_exception",
+              "reasons": [
+                "Access removal occurred after termination.",
+                "A login is recorded after termination."
+              ],
+              "current_exposure_resolved": true
+            }
+          ],
+          "baseline_count": 1,
+          "retest_count": 1,
+          "evidence_paths": [
+            "case-study/itgc/ITGC-ACCESS/baseline/access_population.csv",
+            "case-study/itgc/ITGC-ACCESS/retest/access_population.csv"
+          ],
+          "reason": "1 exception(s) remain in the retest; an authorized reviewer must assess evidence and remediation."
+        },
+        {
+          "id": "ITGC-CHANGE",
+          "title": "Vendor production change authorization",
+          "objective": "Production changes have an accountable approver and approval before deployment.",
+          "owner": "Vendor change manager (fictional role)",
+          "nist_csf": [
+            "PR.PS-01"
+          ],
+          "iso_27001": [
+            "A.8.32"
+          ],
+          "framework_note": "Related reference points for secure configuration and change management. A historical approval after deployment does not cure the sequence failure.",
+          "status": "gap",
+          "current_exposure_resolved": false,
+          "baseline_population": 2,
+          "baseline_exception_count": 1,
+          "retest_population": 2,
+          "baseline_exceptions": [
+            {
+              "record_id": "CHG-201",
+              "row": 2,
+              "fixture_role": "seeded_exception",
+              "reasons": [
+                "Production change was deployed before approval."
+              ]
+            }
+          ],
+          "retest_exceptions": [
+            {
+              "record_id": "CHG-201",
+              "row": 2,
+              "fixture_role": "seeded_exception",
+              "reasons": [
+                "Production change was deployed before approval."
+              ]
+            }
+          ],
+          "baseline_count": 1,
+          "retest_count": 1,
+          "evidence_paths": [
+            "case-study/itgc/ITGC-CHANGE/baseline/change_population.csv",
+            "case-study/itgc/ITGC-CHANGE/retest/change_population.csv"
+          ],
+          "reason": "1 exception(s) remain in the retest; an authorized reviewer must assess evidence and remediation."
+        },
+        {
+          "id": "ITGC-BACKUP",
+          "title": "Vendor backup completion and restore evidence",
+          "objective": "Scheduled backup jobs complete, and the defined restore-test evidence is recorded.",
+          "owner": "Vendor service continuity owner (fictional role)",
+          "nist_csf": [
+            "PR.DS-11",
+            "RC.RP-03"
+          ],
+          "iso_27001": [
+            "A.8.13",
+            "A.8.14"
+          ],
+          "framework_note": "Related reference points for backup, resilience and recovery. A passed fixture check does not prove the vendor's operating effectiveness.",
+          "status": "pass",
+          "current_exposure_resolved": true,
+          "baseline_population": 2,
+          "baseline_exception_count": 1,
+          "retest_population": 2,
+          "baseline_exceptions": [
+            {
+              "record_id": "BKP-301",
+              "row": 2,
+              "fixture_role": "seeded_exception",
+              "reasons": [
+                "Evidence incomplete or malformed for completion_date: required field 'completion_date' is missing.",
+                "Evidence incomplete or malformed for restore_test_date: required field 'restore_test_date' is missing.",
+                "Evidence incomplete or malformed: required field 'restore_test_result' is missing.",
+                "Scheduled backup status is 'failed', not success.",
+                "Restore-test result is 'unknown', not passed."
+              ]
+            }
+          ],
+          "retest_exceptions": [],
+          "baseline_count": 1,
+          "retest_count": 0,
+          "evidence_paths": [
+            "case-study/itgc/ITGC-BACKUP/baseline/backup_population.csv",
+            "case-study/itgc/ITGC-BACKUP/retest/backup_population.csv"
+          ],
+          "reason": "No exception was detected in the revised synthetic population; this control check is not an approval or effectiveness opinion."
+        }
+      ],
+      "metrics": {
+        "seeded_failures_detected": {
+          "actual": 3,
+          "expected": 3
+        },
+        "seeded_failures_missed": [],
+        "unexpected_baseline_controls": [],
+        "clean_rows_flagged_expected": 0,
+        "clean_rows_flagged": 0,
+        "retest_exceptions_remaining": 2,
+        "controls_with_retest_exceptions": 2,
+        "baseline_population_rows": 6,
+        "retest_population_rows": 6,
+        "measurement_scope": "These six small synthetic CSV populations and three selected ITGC checks only."
+      }
+    },
+    "coverage": [
+      {
+        "control_id": "TPRM-GOV-01",
+        "status": "Documented",
+        "reason": "The case documents proposed criticality, ownership and review steps. An authorized reviewer has not approved these lab decisions.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-GOV-02",
+        "status": "Documented",
+        "reason": "The case documents proposed criticality, ownership and review steps. An authorized reviewer has not approved these lab decisions.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-CON-01",
+        "status": "Evidence needed",
+        "reason": "No adequate supplier evidence for this question is included. Request and review the listed evidence before reaching a conclusion.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-SUP-01",
+        "status": "Evidence needed",
+        "reason": "No adequate supplier evidence for this question is included. Request and review the listed evidence before reaching a conclusion.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-IAM-01",
+        "status": "Control gap",
+        "reason": "1 baseline exception(s); 1 remain in the revised synthetic records. These tests cover selected checks only; full control-question evidence and reviewer approval remain outstanding.",
+        "test_ids": [
+          "ITGC-ACCESS"
+        ]
+      },
+      {
+        "control_id": "TPRM-CHG-01",
+        "status": "Control gap",
+        "reason": "1 baseline exception(s); 1 remain in the revised synthetic records. These tests cover selected checks only; full control-question evidence and reviewer approval remain outstanding.",
+        "test_ids": [
+          "ITGC-CHANGE"
+        ]
+      },
+      {
+        "control_id": "TPRM-OPS-01",
+        "status": "Evidence needed",
+        "reason": "No adequate supplier evidence for this question is included. Request and review the listed evidence before reaching a conclusion.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-IR-01",
+        "status": "Evidence needed",
+        "reason": "No adequate supplier evidence for this question is included. Request and review the listed evidence before reaching a conclusion.",
+        "test_ids": []
+      },
+      {
+        "control_id": "TPRM-RES-01",
+        "status": "Retest ready",
+        "reason": "1 baseline exception(s); 0 remain in the revised synthetic records. These tests cover selected checks only; full control-question evidence and reviewer approval remain outstanding.",
+        "test_ids": [
+          "ITGC-BACKUP"
+        ]
+      },
+      {
+        "control_id": "TPRM-REV-01",
+        "status": "Documented",
+        "reason": "The case documents proposed criticality, ownership and review steps. An authorized reviewer has not approved these lab decisions.",
+        "test_ids": []
+      }
+    ],
+    "scope": "Proposed framework references and selected synthetic vendor IT-control tests; no certification or full-framework compliance conclusion."
+  }
+}

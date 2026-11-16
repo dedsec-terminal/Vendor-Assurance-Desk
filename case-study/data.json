@@ -1,0 +1,207 @@
+{
+  "case_id": "HPD-2026-001",
+  "case_title": "HarborPay Demo vendor review",
+  "assessment_date": "2026-11-16",
+  "fictional_data_notice": "SYNTHETIC TRAINING DATA. HarborPay Demo and all service descriptions, evidence notes, people, control states, and remediation records in this case are fictional. These materials are not audit reports, certificates, attestation, or proof of a real vendor's security.",
+  "assessment_scope": {
+    "organization": "Example employer (fictional)",
+    "service": "Payroll processing SaaS",
+    "data_categories": [
+      "employee identity data",
+      "payroll details",
+      "bank account details"
+    ],
+    "business_context": "Payroll is operationally important and processes sensitive employee information.",
+    "criticality": "High (proposed lab tier; reviewer to confirm)",
+    "review_objective": "Determine whether the supplied fictional evidence supports onboarding, conditional onboarding, or a hold pending review.",
+    "evidence_service": "Payroll processing",
+    "evidence_requirements": {
+      "report_max_age_days": 365,
+      "policy_max_age_days": 365,
+      "customer_control_id": "CUEC-ADMIN-MFA",
+      "customer_iam_owner": "Customer IAM owner (fictional role)"
+    }
+  },
+  "vendors": [
+    {
+      "vendor_id": "V-HPD-001",
+      "name": "HarborPay Demo",
+      "fictional": true,
+      "service": "Payroll processing SaaS",
+      "business_owner": "Payroll service owner (fictional role)",
+      "data_categories": [
+        "employee identity data",
+        "payroll details",
+        "bank account details"
+      ],
+      "assessment_status": "Initial review - pending human decision",
+      "evidence_ids": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E02-v2",
+        "E03-v2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "version": 1,
+      "evidence_type": "certificate_metadata",
+      "label": "Fictional ISO/IEC 27001 certificate metadata",
+      "provided_by": "HarborPay Demo (fictional)",
+      "entity": "HarborPay Demo",
+      "service_scope": [
+        "Payroll processing"
+      ],
+      "standard": "ISO/IEC 27001 (metadata only)",
+      "valid_from": "2025-11-01",
+      "expiry_date": "2026-10-31",
+      "verified": false,
+      "content_notice": "Synthetic metadata only. No certificate image, issuer, accreditation claim, signature, or real attestation is represented.",
+      "review_note": "The stated date is before the assessment date. Treat this as a gap in current assurance evidence. It does not by itself show that a security control failed or that an incident occurred. Ask for current evidence and verify its issuer, entity, scope, and validity before relying on it.",
+      "initial_status": "Expired metadata; authenticity not verified"
+    },
+    {
+      "evidence_id": "E02",
+      "version": 1,
+      "evidence_type": "soc2_style_summary",
+      "label": "Fictional SOC 2-style summary - version 1",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "report_period_start": "2026-01-01",
+      "report_period_end": "2026-09-30",
+      "report_type": "Synthetic Type II-style summary; not a SOC report",
+      "system_scope": [
+        "Customer support portal"
+      ],
+      "excluded_services": [
+        "Payroll processing"
+      ],
+      "opinion": "Not provided",
+      "exceptions": "Not represented in this short synthetic summary",
+      "cuecs": "Not represented in this short synthetic summary",
+      "verified": false,
+      "content_notice": "Illustrative training summary only. It is not issued by an auditor and cannot substantiate a SOC 2 examination.",
+      "review_note": "The stated service boundary excludes the payroll service being assessed. A date range that appears recent cannot correct a service-scope mismatch.",
+      "initial_status": "Out of scope for the assessed service"
+    },
+    {
+      "evidence_id": "E03",
+      "version": 1,
+      "evidence_type": "cuec_requirement_and_mock_state",
+      "label": "Fictional customer responsibility note - version 1",
+      "provided_by": "Example employer (fictional)",
+      "control_id": "CUEC-ADMIN-MFA",
+      "responsibility_type": "Complementary user entity control (customer-operated)",
+      "requirement": "Require multi-factor authentication for privileged payroll administrator accounts before the service is used with employee data.",
+      "owner": "Customer IAM owner (fictional role)",
+      "mock_state": "Disabled in the fictional lab configuration",
+      "verified": false,
+      "content_notice": "Training requirement and mock state only; no actual employer or payroll system was inspected.",
+      "review_note": "The customer is responsible for implementing this condition in the fictional scenario. Do not attribute this gap to HarborPay's controls.",
+      "mfa_enabled": false
+    },
+    {
+      "evidence_id": "E04",
+      "version": 1,
+      "evidence_type": "policy_summary",
+      "label": "Fictional access policy summary - control check fixture",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "policy_owner": "Security policy owner (fictional role)",
+      "last_approved": "2026-10-01",
+      "review_frequency": "Quarterly access reviews",
+      "service_scope": [
+        "Payroll processing"
+      ],
+      "scope_match": true,
+      "required_policy_present": true,
+      "verified": false,
+      "content_notice": "Synthetic summary prepared as a clean test fixture; not a real approved vendor policy.",
+      "review_note": "This fixture should pass only the lab's documented presence, approval-date, and scope checks. It is not evidence that access reviews were performed effectively."
+    },
+    {
+      "evidence_id": "E02-v2",
+      "version": 2,
+      "supersedes": "E02",
+      "evidence_type": "soc2_style_summary",
+      "label": "Fictional SOC 2-style summary - version 2",
+      "entity": "HarborPay Demo",
+      "provided_by": "HarborPay Demo (fictional)",
+      "report_period_start": "2026-01-01",
+      "report_period_end": "2026-09-30",
+      "report_type": "Synthetic Type II-style summary; not a SOC report",
+      "system_scope": [
+        "Customer support portal",
+        "Payroll processing"
+      ],
+      "excluded_services": [],
+      "opinion": "Not provided",
+      "exceptions": "Not represented in this short synthetic summary",
+      "cuecs": "Not represented in this short synthetic summary",
+      "verified": false,
+      "content_notice": "Synthetic revised training summary. It is not an auditor-issued report or actual assurance.",
+      "review_note": "For the lab retest, this version corrects the declared service-boundary field. Reviewer must keep assurance status provisional because authenticity, actual report wording, exceptions, and other report content are not available."
+    },
+    {
+      "evidence_id": "E03-v2",
+      "version": 2,
+      "supersedes": "E03",
+      "evidence_type": "cuec_mock_state",
+      "label": "Fictional MFA configuration screenshot description - version 2",
+      "provided_by": "Example employer (fictional)",
+      "control_id": "CUEC-ADMIN-MFA",
+      "responsibility_type": "Complementary user entity control (customer-operated)",
+      "requirement": "Require multi-factor authentication for privileged payroll administrator accounts before the service is used with employee data.",
+      "owner": "Customer IAM owner (fictional role)",
+      "mock_state": "Enabled in a labelled fictional lab configuration",
+      "verified": false,
+      "content_notice": "Mock configuration description only. No real system or screenshot was captured.",
+      "review_note": "For the lab retest only, this updated mock evidence supports passing the selected configuration-state check. A real review would verify the authentic system, covered accounts, enforcement, and relevant exceptions.",
+      "mfa_enabled": true
+    }
+  ],
+  "treatment_catalog": [
+    {
+      "finding_id": "CERT-EXPIRY",
+      "evidence_id": "E01",
+      "type": "assurance_evidence_freshness",
+      "title": "Current in-scope ISO assurance evidence unavailable",
+      "description": "The fictional certificate metadata shows an expiry before the assessment date and has not been authenticated.",
+      "default_severity": "Unrated; reviewer to determine using business context",
+      "required_action": "Obtain and authenticate current evidence, verify the entity and payroll scope, and record a reviewer decision.",
+      "owner": "Vendor relationship owner (fictional role)",
+      "due_date": "2026-11-23",
+      "treatment_note": "An expired date is not proof of a control failure or breach. Do not close this item with an unverified replacement or change of date."
+    },
+    {
+      "finding_id": "ASSURANCE-SCOPE",
+      "evidence_id": "E02",
+      "retest_evidence_id": "E02-v2",
+      "type": "assurance_scope",
+      "title": "Assurance summary does not initially cover payroll processing",
+      "description": "Initial synthetic summary excludes the specific service under review.",
+      "default_severity": "Unrated; reviewer to determine using business context",
+      "required_action": "Obtain an authentic report covering the purchased service and document the reviewer’s scope analysis.",
+      "owner": "Vendor relationship owner (fictional role)",
+      "due_date": "2026-11-23",
+      "treatment_note": "The synthetic v2 field tests the scope-check workflow. It does not replace the missing genuine report."
+    },
+    {
+      "finding_id": "CUSTOMER-MFA",
+      "evidence_id": "E03",
+      "retest_evidence_id": "E03-v2",
+      "type": "cuec_customer_control",
+      "title": "Customer-side MFA requirement unmet in the initial lab state",
+      "description": "The fictional responsibility note assigns privileged payroll administrator MFA to the customer; its initial mock state is disabled.",
+      "default_severity": "Unrated; reviewer to determine using business context",
+      "required_action": "Before real use, the customer IAM owner should enable and verify MFA for all in-scope privileged accounts.",
+      "owner": "Customer IAM owner (fictional role)",
+      "due_date": "2026-11-20",
+      "treatment_note": "This is a hypothetical customer responsibility, not a HarborPay vendor control failure. The mock v2 does not configure a real system."
+    }
+  ]
+}

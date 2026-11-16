@@ -1,0 +1,3 @@
+vendor_id,record_id,fixture_role,backup_status,scheduled_date,completion_date,restore_test_date,restore_test_result
+V-HPD-001,BKP-301,seeded_exception,Failed,2026-11-14,,,
+V-HPD-001,BKP-302,clean_comparison,Success,2026-11-14,2026-11-14,2026-10-28,Passed

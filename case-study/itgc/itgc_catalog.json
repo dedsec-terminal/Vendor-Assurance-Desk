@@ -1,0 +1,39 @@
+{
+  "notice": "Proposed related control references for a fictional vendor ITGC exercise. References are not equivalence claims or evidence of framework conformity.",
+  "assessment_date": "2026-11-16",
+  "controls": [
+    {
+      "id": "ITGC-ACCESS",
+      "title": "Vendor workforce access revocation",
+      "objective": "Access for terminated vendor personnel is revoked by termination and no later login is recorded.",
+      "owner": "Vendor identity and access owner (fictional role)",
+      "questions": ["Are vendor-user access grants inventoried by service?", "Does offboarding remove access by termination?", "Does available authentication evidence show any later access?"],
+      "expected_evidence": ["Named user and service access list", "Termination and access-removal timestamps", "Relevant last-authentication event, scoped to the assessed service"],
+      "nist_csf_2_0": ["PR.AA-05"],
+      "iso_iec_27001_2022": ["A.5.18", "A.8.2"],
+      "mapping_note": "Related references for access rights management and privileged access."
+    },
+    {
+      "id": "ITGC-CHANGE",
+      "title": "Vendor production change authorization",
+      "objective": "Production changes have an accountable approver and approval before deployment.",
+      "owner": "Vendor change manager (fictional role)",
+      "questions": ["Can each deployed production change be traced to a record?", "Was authorization recorded before implementation?", "Are emergency changes subject to retrospective review under a defined process?"],
+      "expected_evidence": ["Change identifier and deployment event", "Approver identity and approval timestamp", "Emergency-change review record where applicable"],
+      "nist_csf_2_0": ["PR.PS-01"],
+      "iso_iec_27001_2022": ["A.8.32"],
+      "mapping_note": "Related references for configuration and change management; this check tests sample approval sequence only."
+    },
+    {
+      "id": "ITGC-BACKUP",
+      "title": "Vendor backup completion and restore evidence",
+      "objective": "Scheduled backup jobs complete and defined restore-test evidence is recorded.",
+      "owner": "Vendor service continuity owner (fictional role)",
+      "questions": ["Did the scheduled backup complete within the required window?", "Is there evidence of a restore test for the stated service or data scope?", "Does the evidence describe a test result and date?"],
+      "expected_evidence": ["Scheduled and completed job record", "Restore-test date, scope and result", "Exception owner and remediation record for a failure"],
+      "nist_csf_2_0": ["PR.DS-11", "RC.RP-03"],
+      "iso_iec_27001_2022": ["A.8.13", "A.8.14"],
+      "mapping_note": "Related references for backup and ICT resilience; these small fixtures do not measure recoverability or RTO/RPO attainment."
+    }
+  ]
+}

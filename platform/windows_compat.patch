@@ -1,0 +1,34 @@
+diff --git a/backend/core/generators.py b/backend/core/generators.py
+index 20014b1..55b123f 100644
+--- a/backend/core/generators.py
++++ b/backend/core/generators.py
+@@ -1,7 +1,10 @@
+ import io
+ from collections import Counter
+ import multiprocessing
+-import resource
++try:
++    import resource
++except ImportError:  # Windows has no POSIX resource module.
++    resource = None
+ import traceback
+ from collections import OrderedDict, defaultdict
+ from datetime import date, datetime, timedelta, timezone, tzinfo
+@@ -1565,6 +1568,17 @@ class DocxRenderCrash(DocxRenderError):
+ 
+ 
+ def _render_docx_in_child(doc: DocxTemplate, context: dict, conn: Connection) -> None:
++    if resource is None:
++        # Fail closed: without the POSIX address-space limit, custom templates
++        # cannot be safely rendered by this bounded worker on native Windows.
++        conn.send(
++            (
++                "error",
++                "DOCX report rendering is unavailable on this platform because "
++                "POSIX memory limits are unsupported.",
++            )
++        )
++        return
+     try:
+         with open("/proc/self/statm") as statm:
+             used = int(statm.read().split()[0]) * resource.getpagesize()

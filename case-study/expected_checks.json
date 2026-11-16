@@ -1,0 +1,29 @@
+{
+  "answer_key_id": "HPD-2026-001-v1",
+  "notice": "Synthetic test oracle for this training fixture. These expected statuses are not measured project results. A reviewer should inspect evidence and record a reason before changing status.",
+  "assessment_date": "2026-11-16",
+  "initial": {
+    "expected_open_finding_ids": ["CERT-EXPIRY", "ASSURANCE-SCOPE", "CUSTOMER-MFA"],
+    "expected_clean_evidence_ids": ["E04"],
+    "check_results": {
+      "CERT-EXPIRY": {"result": "gap", "basis": "expiry_date 2026-10-31 is before assessment_date 2026-11-16; verification false"},
+      "ASSURANCE-SCOPE": {"result": "gap", "basis": "E02 service scope excludes Payroll processing"},
+      "CUSTOMER-MFA": {"result": "gap", "basis": "E03 assigns MFA to customer; initial mock state is Disabled"},
+      "E04-CLEAN-FIXTURE": {"result": "pass_selected_checks_only", "basis": "E04 policy is present, has a stated owner/approval date, and includes payroll scope"}
+    }
+  },
+  "retest": {
+    "synthetic_evidence_references": ["E02-v2", "E03-v2"],
+    "eligible_for_reviewer_closure": ["ASSURANCE-SCOPE", "CUSTOMER-MFA"],
+    "must_remain_open": ["CERT-EXPIRY"],
+    "final_decision": "Requires reviewer judgment; passing the synthetic checks does not establish actual assurance or approve the vendor."
+  },
+  "measurement_definitions": {
+    "seeded_gap_recall": "Number of the three expected initial gaps identified by the automated selected metadata checks / 3; human judgment remains separate.",
+    "clean_fixture_findings": "Number of findings generated for E04 under only the selected policy-presence, approval-date, and service-scope checks.",
+    "owner_and_due_date_coverage": "Open findings with both an owner and due date / 3.",
+    "evidence_link_coverage": "Findings with a link to the exact evidence version and a written review reason / 3.",
+    "simulated_retest_closure": "Among ASSURANCE-SCOPE and CUSTOMER-MFA, number eligible for and actually accepted for simulated closure after review / 2.",
+    "unresolved_gap_preserved": "Whether CERT-EXPIRY remains open in the retest; expected true."
+  }
+}

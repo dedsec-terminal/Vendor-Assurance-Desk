@@ -1,0 +1,3 @@
+vendor_id,record_id,fixture_role,environment,approval_date,deployment_date,approver
+V-HPD-001,CHG-201,seeded_exception,Production,2026-11-13,2026-11-12,Change approver A (fictional)
+V-HPD-001,CHG-202,clean_comparison,Production,2026-11-11,2026-11-12,Change approver B (fictional)

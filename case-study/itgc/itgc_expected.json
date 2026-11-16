@@ -1,0 +1,17 @@
+{
+  "notice": "Fictional training answer key. It is not supplied to or used by the checking functions.",
+  "assessment_date": "2026-11-16",
+  "seeded_failed_controls": ["ITGC-ACCESS", "ITGC-CHANGE", "ITGC-BACKUP"],
+  "expected_baseline_reason_fragments": {
+    "ITGC-ACCESS": "A login is recorded after termination.",
+    "ITGC-CHANGE": "Production change was deployed before approval.",
+    "ITGC-BACKUP": "Scheduled backup status is 'failed', not success."
+  },
+  "expected_retest_gaps": ["ITGC-ACCESS", "ITGC-CHANGE"],
+  "expected_clean_exceptions": 0,
+  "rationale": {
+    "ITGC-ACCESS": "The baseline and retest preserve the same post-termination login on 2026-11-12. Access is now disabled and removed on 2026-11-16, resolving current exposure while the historical timeliness gap remains open.",
+    "ITGC-CHANGE": "The historical change was deployed before approval. A later approval date cannot change the original authorization sequence.",
+    "ITGC-BACKUP": "Initial job BKP-301 remains unchanged as historical evidence. The separate 2026-11-16 retest observation BKP-303 records a successful new job and passed mock restore test; this does not rewrite or erase BKP-301."
+  }
+}

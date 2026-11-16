@@ -1,0 +1,42 @@
+[
+  {
+    "event": "Finding recorded",
+    "finding_id": "CERT-EXPIRY",
+    "actor": "Automated metadata check",
+    "reason": "Stated validity ended 2026-10-31; current assurance evidence is unavailable.",
+    "stage": "baseline",
+    "evidence_id": "E01"
+  },
+  {
+    "event": "Finding recorded",
+    "finding_id": "ASSURANCE-SCOPE",
+    "actor": "Automated metadata check",
+    "reason": "The declared assurance boundary excludes Payroll processing.",
+    "stage": "baseline",
+    "evidence_id": "E02"
+  },
+  {
+    "event": "Retest passed; review required",
+    "finding_id": "ASSURANCE-SCOPE",
+    "actor": "Automated metadata check",
+    "reason": "Revised declared scope includes payroll; this check does not authenticate or fully review a SOC report.",
+    "stage": "retest",
+    "evidence_id": "E02-v2"
+  },
+  {
+    "event": "Finding recorded",
+    "finding_id": "CUSTOMER-MFA",
+    "actor": "Automated metadata check",
+    "reason": "Required customer-operated administrator MFA is disabled in the mock configuration.",
+    "stage": "baseline",
+    "evidence_id": "E03"
+  },
+  {
+    "event": "Retest passed; review required",
+    "finding_id": "CUSTOMER-MFA",
+    "actor": "Automated metadata check",
+    "reason": "The revised mock configuration states MFA is enabled; real enforcement is not verified.",
+    "stage": "retest",
+    "evidence_id": "E03-v2"
+  }
+]

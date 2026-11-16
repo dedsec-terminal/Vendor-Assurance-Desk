@@ -47,6 +47,7 @@ const { chromium } = require(packagePath);
   assert.equal((await page.request.get(base + '/platform/.local/credentials.json')).status(), 404);
   assert.equal((await page.request.get(base + '/review/%2e%2e/%2e%2e/docker/runtime/.private/admin_credentials.txt')).status(), 404);
   await page.locator('.review-link').click();
+  await page.waitForLoadState('networkidle');
   await page.locator('#search').waitFor();
   const readerManifest = await (await page.request.get(base + '/review/source-manifest.json')).json();
   assert.ok(readerManifest.sources.length >= 14);

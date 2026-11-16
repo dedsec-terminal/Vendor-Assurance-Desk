@@ -51,6 +51,8 @@ The Python review output is integrated into a native CISO Assistant Findings Ass
 
 The [integration guide](docs/platform_integration.md) explains the native object relationships, repeatable commands and limits. The [verified read-back snapshot](output/platform_sync.json) records case identity, canonical JSON source hashes and exact evidence/control links. The supplier assessment and findings register share stable case context; upstream has no direct foreign-key relationship between those assessment types. Repeat syncs preserve existing records and reject unexpected changes instead of approving findings automatically.
 
+All ten supplier-review questions also have a [primary native ISO/IEC 27001:2022 reference](docs/native_framework_mapping.md). The product supports one reference per applied control, so the remaining ISO and NIST crosswalks stay in the source catalog. The configuration associates topics; it does not mark any supplier control effective or establish compliance. The separate [reference-link snapshot](output/framework_links.json) records the exact library version, source IDs and unchanged review states.
+
 ## The decision this project supports
 
 HarborPay Demo would process employee identity and bank data. Its initial evidence contains an expired certificate record, an assurance summary excluding payroll, and an unmet customer-operated MFA requirement. A clean access-policy record provides a negative comparison.
@@ -94,6 +96,7 @@ The command records a self-declared local review; it does not authenticate the p
 
 ```powershell
 python -m unittest discover -s tests -v
+python scripts/validate_framework_snapshot.py
 python scripts/build_scorecard.py
 ```
 
@@ -104,7 +107,7 @@ python -m pip install -r requirements-build.txt
 python build_site.py
 ```
 
-The unit suite covers changed-vendor approvals, incorrect evidence identity, stale and malformed dates, missing evidence, clean controls, retest regressions, historical exceptions, ambiguous revisions and deterministic results. `tests/browser_smoke.cjs` checks the six views, responsive layout, downloads and denied private paths using Playwright. Set `PLAYWRIGHT_MODULE` and `PLAYWRIGHT_BROWSERS_PATH` for your installation when needed.
+The unit suite covers changed-vendor approvals, incorrect evidence identity, stale and malformed dates, missing evidence, clean controls, retest regressions, historical exceptions, ambiguous revisions and deterministic results. The framework snapshot validator checks catalog identity, canonical hashes, exact native associations and pending review states offline; live platform readback uses the separate Docker verifier. `tests/browser_smoke.cjs` checks the six views, all 15 review documents, responsive layout, downloads and denied private paths using Playwright. Set `PLAYWRIGHT_MODULE` and `PLAYWRIGHT_BROWSERS_PATH` for your installation when needed.
 
 ## Files
 

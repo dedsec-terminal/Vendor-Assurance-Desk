@@ -42,7 +42,7 @@ Run the sync command again, then the verification command again. The second sync
 | Synthetic baseline/retest evidence references | `Evidence` | `missing`, synthetic inventory only, no attachment; linked to finding |
 | Proposed next steps | Finding recommendation | Human action required; no automatic closure |
 
-The `TPRM-*` questions retain their proposed NIST CSF 2.0 and ISO/IEC 27001:2022 references as scoping aids. They are not native control mappings to verified framework catalog records, and no compliance equivalence is claimed.
+The `TPRM-*` questions retain their complete proposed NIST CSF 2.0 and ISO/IEC 27001:2022 crosswalk as scoping aids. The [native reference configuration](native_framework_mapping.md) adds one primary ISO/IEC 27001:2022 association per question through the product's single reference-control field. The additional ISO and NIST references remain proposed in the source catalog. These associations do not establish control effectiveness or compliance equivalence.
 
 ## Verification limits
 

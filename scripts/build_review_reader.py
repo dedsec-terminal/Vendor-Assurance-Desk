@@ -26,6 +26,7 @@ CURATED = (
     ("docs/stakeholder_brief.md", "Decision brief", "Assessment", True),
     ("output/outcome_scorecard.md", "Outcome scorecard", "Results", False),
     ("docs/platform_integration.md", "GRC platform integration", "Platform", False),
+    ("docs/native_framework_mapping.md", "Native ISO control references", "Platform", True),
     ("docs/demo_walkthrough.md", "Review walkthrough", "Guide", True),
     ("case-study/methodology.md", "Review methodology", "Methodology", True),
     ("case-study/questionnaire.md", "Assessment questionnaire", "Working papers", True),

@@ -23,6 +23,7 @@ ROUTES = {
     "/output/outcome_scorecard.json": ("output/outcome_scorecard.json", "application/json; charset=utf-8"),
     "/output/outcome_scorecard.md": ("output/outcome_scorecard.md", "text/markdown; charset=utf-8"),
     "/output/platform_sync.json": ("output/platform_sync.json", "application/json; charset=utf-8"),
+    "/output/framework_links.json": ("output/framework_links.json", "application/json; charset=utf-8"),
 }
 
 

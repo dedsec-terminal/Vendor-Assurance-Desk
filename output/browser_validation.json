@@ -3,8 +3,9 @@
   "views": 6,
   "responsive": true,
   "console_errors": [],
-  "downloads": 4,
+  "downloads": 5,
   "private_paths_denied": 3,
-  "review_sources": 14,
-  "reader_search": true
+  "review_sources": 15,
+  "reader_search": true,
+  "native_framework_reader": true
 }

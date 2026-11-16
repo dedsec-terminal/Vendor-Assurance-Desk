@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Native ISO control references | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a><a class="nav-link active" href="docs-native-framework-mapping-md.html">Native ISO control references</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Platform <span>·</span> Synthetic case study</div><h1>Native ISO control references</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/docs/native_framework_mapping.md">docs/native_framework_mapping.md</a></span><span>820 words · SHA-256 <code>149437c3fcc7f3a7…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><p>The ten Vendor Assurance Desk (<code>VAD-TPRM-CONTROLS-1.0</code>) supplier-review questions are linked to one exact ISO/IEC 27001:2022 Annex A reference each in the local CISO Assistant v4.3.2 instance. These are <em>primary topical associations</em> that make the relevant native reference visible from each applied question. They do not establish that a supplier meets a control, demonstrate compliance, or claim equivalence.</p>
+<h2 id="why-only-one-reference-is-linked">Why only one reference is linked</h2>
+<p>The installed ORM schema defines <code>core.AppliedControl.reference_control</code> as a single nullable foreign key to <code>core.ReferenceControl</code>. It cannot represent the multiple NIST and ISO references listed for several catalog questions. The chosen ISO reference is the primary topical association; the full NIST CSF 2.0 and additional ISO crosswalk IDs and caveats remain in <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/case-study/control_catalog.json"><code>../case-study/control_catalog.json</code></a>. NIST CSF 2.0 ReferenceControl records were not available in this local database, so no NIST association was fabricated.</p>
+<table>
+<thead>
+<tr>
+<th>VAD question</th>
+<th>Native ISO/IEC 27001:2022 reference</th>
+<th>Reason for the primary link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TPRM-GOV-01</td>
+<td>A.5.19</td>
+<td>Supplier relationships is closest to pre-engagement supplier diligence.</td>
+</tr>
+<tr>
+<td>TPRM-GOV-02</td>
+<td>A.5.19</td>
+<td>Supplier relationship governance is closest to lifecycle ownership.</td>
+</tr>
+<tr>
+<td>TPRM-CON-01</td>
+<td>A.5.20</td>
+<td>Supplier agreements directly cover contractual security obligations.</td>
+</tr>
+<tr>
+<td>TPRM-SUP-01</td>
+<td>A.5.21</td>
+<td>ICT supply-chain security directly covers downstream dependencies.</td>
+</tr>
+<tr>
+<td>TPRM-IAM-01</td>
+<td>A.5.15</td>
+<td>Access control is the broad primary topic; identity, access-rights, and authentication references remain in the proposed crosswalk.</td>
+</tr>
+<tr>
+<td>TPRM-CHG-01</td>
+<td>A.8.32</td>
+<td>Change management directly covers authorized and controlled service changes.</td>
+</tr>
+<tr>
+<td>TPRM-OPS-01</td>
+<td>A.8.16</td>
+<td>Monitoring activities is closest to review of security-relevant activity.</td>
+</tr>
+<tr>
+<td>TPRM-IR-01</td>
+<td>A.5.26</td>
+<td>Incident response directly covers coordinated response to incidents.</td>
+</tr>
+<tr>
+<td>TPRM-RES-01</td>
+<td>A.8.13</td>
+<td>Information backup is closest to service backup and restore evidence.</td>
+</tr>
+<tr>
+<td>TPRM-REV-01</td>
+<td>A.5.22</td>
+<td>Supplier service monitoring and review is closest to reassessment and follow-up.</td>
+</tr>
+</tbody>
+</table>
+<p>The standard record IDs were validated against CISO Assistant's exact bundled <strong>International standard ISO/IEC 27001:2022</strong>, version <strong>19</strong> library. The integration loads this library only when it is not already loaded, then sets only the ten <code>reference_control</code> foreign keys. The operation does not edit supplier findings, evidence records, decisions, assessment statuses, or control statuses. Proof uses canonical JSON SHA-256 (<code>canonical-json-v1</code>) so Windows and Linux line endings produce the same digest. A legacy raw-byte proof is accepted for migration only when its hash equals the exact current catalog bytes; successful verification rewrites the proof with the canonical hash.</p>
+<h2 id="reproduce-and-verify">Reproduce and verify</h2>
+<p>Run from the repository root in PowerShell. The scripts execute through the local Docker backend. The staging step copies only the scripts and public control catalog; it does not use administrator credentials.</p>
+<pre><code class="language-powershell">$repo = (Resolve-Path .).Path
+$linuxRepo = '/mnt/' + $repo.Substring(0, 1).ToLowerInvariant() + '/' + $repo.Substring(3).Replace('\', '/')
+$stage = &quot;docker run --rm --volumes-from backend:rw -v '$linuxRepo/scripts:/scripts:ro' -v '$linuxRepo/case-study:/case:ro' alpine:3.23 sh -c 'mkdir -p /code/db/vad_data &amp;&amp; cp /scripts/docker_link_frameworks.py /scripts/docker_verify_framework_links.py /code/db/ &amp;&amp; cp /case/control_catalog.json /code/db/vad_data/'&quot;
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc $stage
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_link_frameworks.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_link_frameworks.py --apply'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_verify_framework_links.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_link_frameworks.py --apply'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_verify_framework_links.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc &quot;docker exec backend cat /code/db/framework_links.json &gt; '$linuxRepo/output/framework_links.json'&quot;
+</code></pre>
+<p>The first command is a no-write plan. <code>--apply</code> uses one database transaction for loading the bundled ISO reference library (if required) and linking the controls. It refuses unknown or ambiguous source IDs, duplicate catalog or applied-control IDs, an unexpected control set or folder, changed control statuses, or conflicting existing links. It checks FK targets again after the locked read and before transaction commit. Repeating it leaves correct links unchanged and refuses to replace manual drift. The verifier independently reads the native records, checks every FK points to exactly one reference in the selected library, and confirms all ten controls remain <code>to_do</code>, the supplier and findings assessments remain <code>in_review</code>, and the three findings remain identified. Run the existing <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/scripts/docker_verify_sync.py"><code>docker_verify_sync.py</code></a> too to verify finding, evidence and remediation integration remains intact.</p>
+<h2 id="limits">Limits</h2>
+<p>The mapping is a focused training crosswalk, not a comprehensive framework mapping exercise. A topical association is not proof that the supplier implemented a requirement. No supplier control is marked effective, no assessment is approved, and the HarborPay Demo onboarding decision remains on hold pending human review of authentic, in-scope evidence.</p></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

@@ -10,6 +10,7 @@ PUBLIC_OUTPUTS = (
     "control_review.json", "control_matrix.csv", "unit_validation.json", "browser_validation.json",
     "ciso_entities.png",
     "outcome_scorecard.json", "outcome_scorecard.md", "platform_sync.json",
+    "framework_links.json",
 )
 
 

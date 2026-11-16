@@ -1,0 +1,99 @@
+{
+  "schema": "vad-native-framework-links-v1",
+  "mode": "verified_readback",
+  "platform": "CISO Assistant v4.3.2",
+  "catalog_id": "VAD-TPRM-CONTROLS-1.0",
+  "catalog_sha256": "a5af381d3f5f1b07e3af7cfaaa50020ae19f66dcf4ad03d1df5fbd6b029f8b7a",
+  "catalog_hash_format": "canonical-json-v1",
+  "source_library": {
+    "ref_id": "ISO/IEC 27001:2022",
+    "name": "International standard ISO/IEC 27001:2022",
+    "version": "19",
+    "native_record_count": 93
+  },
+  "linked_question_count": 10,
+  "unique_native_reference_count": 9,
+  "fail_closed_guard_checks": {
+    "unknown_id": true,
+    "ambiguous_match": true,
+    "duplicate_catalog_ids": true,
+    "duplicate_applied_control_ids": true,
+    "conflicting_reference_id": true,
+    "wrong_locked_fk_readback": true
+  },
+  "links": [
+    {
+      "question_id": "TPRM-CHG-01",
+      "native_ref_id": "A.8.32",
+      "native_record_id": "d71b47eb-3521-479b-8f3c-5685e78bd543",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-CON-01",
+      "native_ref_id": "A.5.20",
+      "native_record_id": "9047b270-8bfb-4798-84a7-e38d988c40f2",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-GOV-01",
+      "native_ref_id": "A.5.19",
+      "native_record_id": "1d15f5d9-acf1-41b2-b85d-7923ec4fc02b",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-GOV-02",
+      "native_ref_id": "A.5.19",
+      "native_record_id": "1d15f5d9-acf1-41b2-b85d-7923ec4fc02b",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-IAM-01",
+      "native_ref_id": "A.5.15",
+      "native_record_id": "0a23cbac-1144-4cd4-8172-83fb9a2a7d4c",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-IR-01",
+      "native_ref_id": "A.5.26",
+      "native_record_id": "28e8bae2-7327-4f5f-a313-b070fbe4c9f1",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-OPS-01",
+      "native_ref_id": "A.8.16",
+      "native_record_id": "3da479f6-707c-4090-8088-7f90268e7d81",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-RES-01",
+      "native_ref_id": "A.8.13",
+      "native_record_id": "bda8a2dd-edb9-4bde-aa50-61ee71855d09",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-REV-01",
+      "native_ref_id": "A.5.22",
+      "native_record_id": "c4884ece-b221-41c3-a8fd-d677ff12afcc",
+      "status": "to_do"
+    },
+    {
+      "question_id": "TPRM-SUP-01",
+      "native_ref_id": "A.5.21",
+      "native_record_id": "cbe3156f-518c-4a60-a25e-2648e927f191",
+      "status": "to_do"
+    }
+  ],
+  "assessment_status": "in_review",
+  "findings_assessment_status": "in_review",
+  "assessment_and_finding_states_unchanged": true,
+  "finding_count": 3,
+  "finding_status_counts": {
+    "identified": 3
+  },
+  "all_scoped_controls_remain_to_do": true,
+  "interpretation": "Primary topical associations only; not compliance evidence, equivalence, or certification.",
+  "limitations": [
+    "The native relationship is single-valued, so additional NIST and ISO crosswalks remain proposed in the source catalog.",
+    "NIST CSF 2.0 native ReferenceControl records were not available in this local database; no NIST FK was created."
+  ]
+}

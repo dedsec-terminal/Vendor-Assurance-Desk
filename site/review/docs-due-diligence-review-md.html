@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Supplier due diligence review | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link active" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Assessment <span>·</span> Synthetic case study</div><h1>Supplier due diligence review</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/docs/due_diligence_review.md">docs/due_diligence_review.md</a></span><span>1,839 words · SHA-256 <code>54ea8420fbc1eb30…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><p><strong>SYNTHETIC TRAINING CASE.</strong> HarborPay Demo, its service, documents, roles, facts and control states are fictional. This is an analyst-work-product example, not an audit, vendor attestation, legal opinion, or actual supplier decision. Assessment date: <strong>16 November 2026</strong>. Prepared for a fictional payroll service owner; human approval is pending.</p>
+<h2 id="decision-in-brief">Decision in brief</h2>
+<p><strong>Recommendation: hold production onboarding pending evidence and authorized review.</strong> The service is modelled as high criticality because it processes employee identity, payroll and bank-account data and supports payroll operations. That is a proposed lab tier, not a validated business classification. The present packet does not establish current, authentic assurance over the purchased payroll service, and the initial customer MFA fixture is disabled. No evidence here establishes a breach or a vendor control failure. Request a current in-scope independent report and verifiable certificate, or a security-reviewer-validated alternative evidence package proportionate to this service; an ISO certificate alone would not answer operational-control, contract, subprocessor or continuity questions. A conditional path may be considered only by an authorized business risk owner after contractual protections, minimum controls, compensating safeguards, dated actions and stop/escalation triggers are evaluated. Any exception requires that accountable human approval; it is not an automatic bypass.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>When it could be justified</th>
+<th>Assessment here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Onboard</td>
+<td>Current in-scope independent assurance or a security-reviewer-validated alternative evidence package; material contract and control requirements resolved; authorized owner accepts residual risk</td>
+<td>Not supported by this synthetic packet</td>
+</tr>
+<tr>
+<td>Conditional onboarding</td>
+<td>Documented risk authority, restricted use/data, effective compensating safeguards, dated conditions and stop/escalation triggers; exception approved by accountable human risk owner</td>
+<td>Possible only after evidence review and approval; conditions are not yet demonstrated</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>Material uncertainties affect sensitive data/service and minimum decision evidence or customer controls are unresolved</td>
+<td>Recommended pending current assurance, MFA verification and contract/operational diligence</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scope-and-method">Scope and method</h2>
+<p>The case concerns a payroll-processing SaaS handling employee identity, payroll and bank-account details. The review considers the actual service boundary, evidence currency/authenticity, shared responsibility, and treatment ownership. Framework references are question prompts mapped to selected NIST CSF 2.0 outcomes and ISO/IEC 27001:2022 Annex A themes in <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/case-study/control_catalog.json"><code>case-study/control_catalog.json</code></a>; they are not a full controls audit or compliance conclusion. Read the original synthetic exhibits in <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/case-study/evidence-packet"><code>case-study/evidence-packet/</code></a>.</p>
+<h3 id="evidence-interpretation">Evidence interpretation</h3>
+<ul>
+<li><strong>E01 — certificate claim:</strong> It states a validity period ending 31 October 2026, before this assessment, and lacks issuer, accreditation details, certificate number, authoritative verification, and underlying certificate. Its declared payroll wording is not authenticated. Record <code>CERT-EXPIRY</code> as stale/unverified assurance. Expiry does not prove a control failed, a breach happened, or the supplier is unsafe. Ask for current verifiable evidence and validate legal entity, exact scope/sites/exclusions, certification body, accreditation chain, validity/status and any suspension.</li>
+<li><strong>E02 v1 — Type II-style summary:</strong> Its stated 1 January–30 September 2026 period is historical. The only stated system is a customer support portal; payroll is explicitly excluded. Therefore it is out of scope for this review, irrespective of its recent-looking dates. The report itself, criteria, opinion, tests, exceptions and subservice/CUEC schedules are absent. “Not represented” means unknown, not no exceptions.</li>
+<li><strong>E02-v2 — simulated scope edit:</strong> The revised fixture lists payroll and removes the exclusion. It changes a declared field only. It cannot authenticate the report, prove payroll was in the original examined boundary, supply period testing, exceptions/opinion, or establish actual control operation. Keep <code>ASSURANCE-SCOPE</code> open for a real review even if a software fixture check changes state.</li>
+<li><strong>SOC 2 Type II considerations:</strong> A genuine Type II report describes a system and reports on controls over a period. Review the actual service-organization description, opinion, criteria, tests/results, exceptions and management responses. Establish whether named subservice organizations are included or carved out; for a carve-out, identify dependencies and review the service auditor reports and complementary subservice-organization controls as appropriate. Review customer CUECs as conditions for the service organization's controls to achieve their objectives. The exercise E03 MFA CUEC is separately assigned to the fictional customer; do not imply it appeared in a real report.</li>
+<li><strong>Bridge statement:</strong> The synthetic E02-B prompt describes management's hypothetical no-material-change claim from 1 October to 16 November. No signed letter or corroboration exists. Even if received, such a letter would not extend the assurance period, test controls in the gap, show absence of incidents, or replace the independent report. Verify authority, coverage, incidents, changes and downstream-provider changes; leave the gap explicit.</li>
+<li><strong>E03 — customer CUEC:</strong> The customer is responsible for MFA on privileged payroll-admin accounts; v1's mock state is disabled. This is a customer-side prerequisite, not a HarborPay finding. E03-v2 marks MFA enabled in a labelled mock only. A real check needs the full privileged identity population, enforcement settings, exceptions/break-glass treatment and dated evidence. Keep real-world implementation unverified.</li>
+<li><strong>E04 — access-policy fixture:</strong> It asserts policy presence, approval date (1 October) and payroll scope. It supplies no full controlled policy or samples. It cannot evidence that access reviews, least privilege, MFA or deprovisioning operated effectively.</li>
+</ul>
+<h2 id="question-by-question-review">Question-by-question review</h2>
+<p>“Not established” is intentionally distinct from “failed.” IDs refer to the ten original questions in <code>case-study/control_catalog.json</code>. Each follow-up is a proposed request, not an assertion about HarborPay.</p>
+<table>
+<thead>
+<tr>
+<th>Control question</th>
+<th>Evidence and reasoned result</th>
+<th>Gap / next request</th>
+<th>Proposed owner and target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TPRM-GOV-01</code> Criticality and pre-engagement diligence</td>
+<td><code>data.json</code> describes payroll and sensitive identity/bank data; it proposes High criticality and names fictional role owners. This supports a scenario rationale, not an approved organization tier or completed real pre-contract assessment.</td>
+<td>Business owner to confirm volumes, data flows, access, business impact, alternatives/concentration, jurisdictions and tier.</td>
+<td>Payroll service owner + security reviewer; before decision</td>
+</tr>
+<tr>
+<td><code>TPRM-GOV-02</code> Risk ownership and lifecycle</td>
+<td><code>data.json</code> provides role labels and assessment date; no approved lifecycle procedure, named approver, review cadence or completed history.</td>
+<td>Confirm accountable risk-acceptance authority, procurement/security roles, annual and event-triggered reassessment, escalation and exit owners.</td>
+<td>Business relationship owner; before decision</td>
+</tr>
+<tr>
+<td><code>TPRM-CON-01</code> Contractual security obligations</td>
+<td>No executed agreement, security schedule or shared-responsibility contract exhibit is in the packet.</td>
+<td>Review incident notification deadlines/cooperation, audit/evidence rights, encryption/access duties, data location/return/deletion, subprocessor notice/objection, continuity, material change and termination clauses. Confirm privacy/DPA terms with legal/privacy.</td>
+<td>Procurement/legal + privacy/security; before production data</td>
+</tr>
+<tr>
+<td><code>TPRM-SUP-01</code> Subprocessors and supply chain</td>
+<td>E02 does not identify subservice organizations or inclusive/carve-out treatment.</td>
+<td>Obtain current subprocessor/hosting list, service/data/access roles, locations, downstream assurance and control flow-down, change notice and review rights. Map dependencies to payroll data and recovery.</td>
+<td>Vendor relationship owner + architecture/security; before decision</td>
+</tr>
+<tr>
+<td><code>TPRM-IAM-01</code> Workforce and privileged access</td>
+<td>E04 is only a policy summary; no workforce access samples or review/revocation evidence. E03 concerns customer-admin MFA only and is not supplier workforce evidence.</td>
+<td>Request access/MFA standards, role model, privileged-account population and exception controls, approval/review samples, termination revocation evidence. Independently verify customer-side E03 condition.</td>
+<td>Vendor IAM owner + customer IAM owner; before privileged use</td>
+</tr>
+<tr>
+<td><code>TPRM-CHG-01</code> Change and configuration</td>
+<td>No configuration standard, approval/deployment sample, emergency-change record or customer notification evidence supplied.</td>
+<td>Request scoped change procedure and redacted normal/emergency change samples with approval, testing, deployment and customer-impact notice.</td>
+<td>Vendor service/engineering owner; before decision or time-bound condition</td>
+</tr>
+<tr>
+<td><code>TPRM-OPS-01</code> Logging and monitoring</td>
+<td>No log source, retention, tamper protection, review sample, alert or customer-access/notification process.</td>
+<td>Obtain scoped event/logging coverage, access protection, retention, monitoring escalation, investigation evidence path and contractual availability.</td>
+<td>Vendor security operations owner; before decision or condition with controls</td>
+</tr>
+<tr>
+<td><code>TPRM-IR-01</code> Incident coordination</td>
+<td>No incident response plan, notification terms, contacts, exercise or evidence-preservation detail.</td>
+<td>Request plan/exercise summary, 24x7 contacts, contractual notification clock, customer coordination, evidence preservation and lessons learned. Confirm response obligations with legal.</td>
+<td>Vendor incident lead + customer incident coordinator; before production</td>
+</tr>
+<tr>
+<td><code>TPRM-RES-01</code> Continuity and recovery</td>
+<td>No service-specific BCP/DR, backup scope, restore test, recovery objectives or dependency record supplied. Payroll operational importance is a case assumption.</td>
+<td>Obtain service BCP/DR and redacted restore exercise, backup protection/retention, tested RTO/RPO, dependencies, customer responsibilities and outage communications. Validate business tolerances.</td>
+<td>Vendor continuity owner + payroll service owner; before decision</td>
+</tr>
+<tr>
+<td><code>TPRM-REV-01</code> Findings and reassessment</td>
+<td><code>recommendation_draft.md</code> records three proposed findings and owners/dates; the decision and external feedback remain pending. E02-v2/E03-v2 are lab-only changes.</td>
+<td>Record authorized disposition, evidence versions, risk rationale, accepted exceptions, action tracking, reassessment triggers and reviewer sign-off. Do not mark real closure from mock retests.</td>
+<td>Risk owner + authorized reviewer; before production</td>
+</tr>
+</tbody>
+</table>
+<h2 id="risk-rationale-and-treatment-register">Risk rationale and treatment register</h2>
+<p><strong>Scenario:</strong> privileged credential compromise or malicious/erroneous change exposes payroll identities and bank details, or disrupts payroll processing. This is a plausible threat scenario based on data sensitivity and service dependency, not an observed threat or incident. <strong>Inherent likelihood: Medium (proposed qualitative rating)</strong> because a cloud payroll service has remote access and administrative dependencies, but the packet contains no threat intelligence, attack-surface evidence or control testing to calibrate probability. <strong>Inherent impact: High (proposed)</strong> due to sensitive financial/personnel data and payroll availability consequences; business impact and legal obligations require owner validation. These ratings are prioritization judgments, not calculated metrics.</p>
+<p><strong>Residual risk: unassessed.</strong> Current assurance, operational controls, actual customer configuration, contract terms, downstream parties and recovery evidence are insufficient to judge control effectiveness. Do not infer residual risk from the synthetic control flags or platform status.</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Current disposition</th>
+<th>Proposed treatment / closure evidence</th>
+<th>Owner / proposed date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CERT-EXPIRY</code></td>
+<td>Open: E01 expired before review and unauthenticated</td>
+<td>Obtain current verifiable certificate/equivalent assurance; independently check issuer/accreditation, entity, payroll scope, validity/status and exclusions. Preserve review record.</td>
+<td>Vendor relationship owner / 23 Nov 2026</td>
+</tr>
+<tr>
+<td><code>ASSURANCE-SCOPE</code></td>
+<td>Open: E02 v1 excludes payroll; E02-v2 is only a mock field edit</td>
+<td>Obtain genuine applicable report and review boundary, period, opinion, exceptions/responses, subservice method and CUECs. Assess bridge gap.</td>
+<td>Vendor relationship owner / 23 Nov 2026</td>
+</tr>
+<tr>
+<td><code>CUSTOMER-MFA</code></td>
+<td>Initial mock gap; revised mock does not verify real enforcement</td>
+<td>Customer IAM owner to enable and verify MFA over all in-scope privileged accounts, document exceptions and retain dated evidence before any real use.</td>
+<td>Customer IAM owner / 20 Nov 2026</td>
+</tr>
+<tr>
+<td>Contract/data protection</td>
+<td>Evidence not supplied; not scored as a control failure</td>
+<td>Review executed terms/DPA: purpose, data categories, roles, location/transfers, retention/deletion, breach notices, subprocessors, audit rights and return at exit.</td>
+<td>Procurement/legal + privacy / before contract</td>
+</tr>
+<tr>
+<td>Incident/continuity</td>
+<td>Evidence not supplied; unknown</td>
+<td>Obtain service-specific plans, exercises, contacts, RTO/RPO and dependency evidence; align contractual requirements with business tolerances.</td>
+<td>Vendor + customer service owners / before production</td>
+</tr>
+</tbody>
+</table>
+<p>Dates are proposed exercise targets, not agreed commitments. The original treatment catalog and generated memo remain the machine-readable workflow baseline; this narrative adds analytical context without claiming real remediation or human approval.</p>
+<h2 id="decision-record-and-boundaries">Decision record and boundaries</h2>
+<ul>
+<li>Evidence considered: E01, E02 v1 and v2, E02-B scenario, E03 v1 and v2, E04, and the fictional case scope.</li>
+<li>Approval / risk acceptance / named reviewer: <strong>Pending.</strong> No approval is implied by this draft.</li>
+<li>Peer/mentor feedback and response: <strong>Pending; no feedback supplied.</strong></li>
+<li>Reassessment triggers: receipt of authenticated evidence; material change in service, data, hosting or subprocessors; incident; failed customer control; material contract change; or scheduled review.</li>
+<li>This work product demonstrates structured document analysis, scoped evidence review, gap treatment and decision writing. It does not demonstrate a completed real-vendor review, client presentation, actual control testing at a supplier, or independent audit assurance.</li>
+</ul></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

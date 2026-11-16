@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 from urllib.parse import urlsplit
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parent
 ROUTES = {
@@ -19,12 +20,23 @@ ROUTES = {
     "/output/control_review.json": ("output/control_review.json", "application/json; charset=utf-8"),
     "/output/control_matrix.csv": ("output/control_matrix.csv", "text/csv; charset=utf-8"),
     "/output/ciso_entities.png": ("output/ciso_entities.png", "image/png"),
+    "/output/outcome_scorecard.json": ("output/outcome_scorecard.json", "application/json; charset=utf-8"),
+    "/output/outcome_scorecard.md": ("output/outcome_scorecard.md", "text/markdown; charset=utf-8"),
+    "/output/platform_sync.json": ("output/platform_sync.json", "application/json; charset=utf-8"),
 }
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        route = ROUTES.get(urlsplit(self.path).path)
+        request_path = unquote(urlsplit(self.path).path)
+        route = ROUTES.get(request_path)
+        if not route and request_path.startswith("/review/"):
+            reader_root = (ROOT / "site/review").resolve()
+            relative = request_path.removeprefix("/review/") or "index.html"
+            candidate = (reader_root / relative).resolve()
+            types = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".js": "application/javascript; charset=utf-8"}
+            if candidate.is_relative_to(reader_root) and candidate.is_file() and candidate.suffix in types:
+                route = (str(candidate.relative_to(ROOT)), types[candidate.suffix])
         if not route:
             self.send_error(404)
             return

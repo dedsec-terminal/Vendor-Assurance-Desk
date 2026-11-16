@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Review methodology | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link active" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Methodology <span>·</span> Synthetic case study</div><h1>Review methodology</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/case-study/methodology.md">case-study/methodology.md</a></span><span>676 words · SHA-256 <code>48d772118a14a589…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><h2 id="boundary-and-purpose">Boundary and purpose</h2>
+<p>This is an explicitly synthetic case used to practise third-party cyber-risk review. It is not a certification, assurance report review, legal opinion, or real vendor decision. The purpose is to evaluate evidence against a stated service, surface uncertainty, assign follow-up, and make a documented recommendation for human review.</p>
+<h2 id="evidence-statuses">Evidence statuses</h2>
+<ul>
+<li><strong>Present</strong>: a record exists; this does not mean it is genuine or adequate.</li>
+<li><strong>In scope</strong>: the record covers the named service and entity being assessed.</li>
+<li><strong>Current</strong>: dates satisfy the lab's stated assessment-date rule.</li>
+<li><strong>Verified</strong>: a reviewer performed and recorded an authenticity/integrity check. In this fixture, every vendor document remains unverified synthetic content.</li>
+<li><strong>Gap</strong>: a required fact is missing, expired, out of scope, or a stated responsibility is unmet. A gap is an evidence/control issue, not proof of a breach.</li>
+<li><strong>Retest eligible</strong>: updated evidence may address a specific finding. A reviewer checks its linkage, scope and adequacy before changing the status.</li>
+</ul>
+<p>Do not collapse missing, not verified, expired and out of scope into a “pass.” Record the exact evidence ID and version with every assessment result.</p>
+<p>The implemented fixture compares a baseline and one revision per evidence item. Additional rounds must use a new case; deeper revision chains are rejected so an intermediate failure cannot silently disappear. The selected metadata checks also require the certificate entity and customer MFA control/owner to match the assessment. The lab defines a maximum age of 365 days for policy approval and the end of the assurance-report period, configurable in <code>data.json</code>. These are training review thresholds, not ISO or SOC requirements. Passing these selected checks does not establish a document's authenticity or sufficiency for a complete assessment.</p>
+<h2 id="criticality-and-risk-scenario">Criticality and risk scenario</h2>
+<p>The case proposes High criticality because the payroll service processes employee identity and bank account details and supports an important business function. A reviewer must confirm that tier for the fictional organization and explain any adjustment.</p>
+<p>Record a scenario in plain language, for example: “If privileged payroll access is misused or compromised, employee data could be exposed and payroll service disrupted.” Evaluate likelihood and impact separately using the organization's selected matrix. The numbers below are anchors for discussion, not default ratings for the three seeded gaps.</p>
+<h3 id="likelihood-anchors">Likelihood anchors</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Score</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Rare: requires unusual conditions; little relevant evidence</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Unlikely: possible, with limited supporting evidence</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Possible: plausible given the described exposure or weakness</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Likely: strong indicators or repeated conditions support the scenario</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Almost certain: direct, current evidence indicates the event is occurring or imminent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="impact-anchors">Impact anchors</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Score</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Negligible: little service or data impact</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Minor: limited, recoverable operational or confidentiality effect</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Moderate: material team/customer effect requiring coordinated response</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Major: broad sensitive-data or sustained service impact</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Severe: critical business disruption or extensive sensitive-data impact</td>
+</tr>
+</tbody>
+</table>
+<p>Use the actual GRC instance's configured matrix for its own calculation. If it differs, record its name/version and scoring method rather than translating scores without justification. Do not invent a percentage reduction, set residual risk automatically, or rate an expired certificate itself as a breach. The expired record means current assurance has not been established.</p>
+<h2 id="treatment-and-approval">Treatment and approval</h2>
+<p>For each finding, record evidence, effect on the assessed service, severity rationale, treatment, named role owner, due date, and retest evidence needed. Assign customer-operated CUECs to the customer owner; supplier duties and customer duties must not be conflated.</p>
+<p>Only a reviewer with decision authority should accept risk, approve an exception, close a finding, or authorize onboarding. Preserve the original assessment and the review history. A closure requires evidence matched to the finding plus a written review reason. The synthetic E02-v2 and E03-v2 can qualify only for simulated re-review of their respective checks; CERT-EXPIRY remains open.</p>
+<h2 id="lab-evaluation">Lab evaluation</h2>
+<p>Before reviewing the application output, compare it with <code>expected_checks.json</code>. Measure seeded-gap recall, clean-fixture findings, owner/due-date and evidence-link coverage, simulated retest closure, and whether the unresolved assurance gap stays open. Record actual numerator and denominator and inspect every mismatch. These are fixture-level process measures; they do not establish real-world accuracy or business risk reduction.</p></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

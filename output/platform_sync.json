@@ -1,0 +1,41 @@
+{
+  "approval": "pending",
+  "assessment_id": "3aa58c6f-f2a4-4196-a5cd-96e610b96dd9",
+  "case_id": "HPD-2026-001",
+  "entity_assessment_status": "in_review",
+  "errors": [],
+  "findings_assessment_status": "in_review",
+  "findings_count": 3,
+  "input_sha256": "b54cc937f485ee5b0324fb436a34519e191865c1686565cefeb859c92a0172b4",
+  "link_counts": {
+    "applied_controls": 4,
+    "assessment": 1,
+    "evidence": 5,
+    "findings": 3,
+    "service": 1,
+    "supplier_scope_controls": 10,
+    "unique_applied_controls": 3,
+    "vendor": 1
+  },
+  "linked_applied_controls": 4,
+  "linked_evidence_records": 5,
+  "links_verified": true,
+  "onboarding": "hold",
+  "record_snapshot_sha256": "cc5139d65a780a5ddf2f001430da79f2d44c04c799736d3a3a8998d43cc1329d",
+  "service_id": "VAD-SYN-SVC-001",
+  "service_ref": "VAD-SYN-SVC-001",
+  "source_file_sha256": {
+    "assessment.json": "687c4da884cc46a0952f3b48d72d677aefe0bf4e0233db49da7eb40dc2c17e43",
+    "control_review.json": "79827e338b1d7d52db425b9cc27ff84bab586ea3478cb00cc47105bd2597564f"
+  },
+  "source_hash_format": "canonical-json-v1",
+  "source_sha256": {
+    "assessment.json": "687c4da884cc46a0952f3b48d72d677aefe0bf4e0233db49da7eb40dc2c17e43",
+    "control_review.json": "79827e338b1d7d52db425b9cc27ff84bab586ea3478cb00cc47105bd2597564f"
+  },
+  "synthetic_only": true,
+  "vendor_id": "V-HPD-001",
+  "vendor_ref": "VAD-SYN-VENDOR-001",
+  "verification_status": "verified",
+  "verified": true
+}

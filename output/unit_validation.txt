@@ -26,8 +26,15 @@ test_missing_population_fails_closed (test_control_review.ControlReviewTests.tes
 test_retest_fixes_access_and_backup_but_keeps_historical_change_gap_open (test_control_review.ControlReviewTests.test_retest_fixes_access_and_backup_but_keeps_historical_change_gap_open) ... ok
 test_retests_preserve_access_history_and_use_a_new_backup_observation (test_control_review.ControlReviewTests.test_retests_preserve_access_history_and_use_a_new_backup_observation) ... ok
 test_seeded_detection_metric_tracks_missing_detected_control (test_control_review.ControlReviewTests.test_seeded_detection_metric_tracks_missing_detected_control) ... ok
+test_fixture_deltas_and_scope_are_explicit (test_scorecard.ScorecardTests.test_fixture_deltas_and_scope_are_explicit) ... ok
+test_identity_hash_matched_verified_counts_are_reported (test_scorecard.ScorecardTests.test_identity_hash_matched_verified_counts_are_reported) ... ok
+test_incomparable_metadata_checks_fail_closed (test_scorecard.ScorecardTests.test_incomparable_metadata_checks_fail_closed) ... ok
+test_missing_platform_ids_and_negative_counts_are_not_verified (test_scorecard.ScorecardTests.test_missing_platform_ids_and_negative_counts_are_not_verified) ... ok
+test_missing_snapshot_stays_pending (test_scorecard.ScorecardTests.test_missing_snapshot_stays_pending) ... ok
+test_stale_source_artifact_hash_is_invalid (test_scorecard.ScorecardTests.test_stale_source_artifact_hash_is_invalid) ... ok
+test_wrong_case_hash_or_vendor_is_invalid_and_uncredited (test_scorecard.ScorecardTests.test_wrong_case_hash_or_vendor_is_invalid_and_uncredited) ... ok
 
 ----------------------------------------------------------------------
-Ran 28 tests in 0.822s
+Ran 35 tests in 0.883s
 
 OK

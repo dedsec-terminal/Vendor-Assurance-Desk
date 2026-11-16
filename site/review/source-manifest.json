@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-11-16T16:37:07+00:00",
+  "scope": "Explicit public Markdown review sources only; no recursive repository crawl.",
+  "sources": [
+    {
+      "path": "docs/due_diligence_review.md",
+      "page": "docs-due-diligence-review-md.html",
+      "sha256": "54ea8420fbc1eb303c22d487e0222d77c4749bd7cf5eeea77d0981be1a71cbdb",
+      "bytes": 14700,
+      "words": 1839
+    },
+    {
+      "path": "docs/stakeholder_brief.md",
+      "page": "docs-stakeholder-brief-md.html",
+      "sha256": "3a3e1dc38efc24437bff6bbf128dc2db6096ae1cddf2e001944072204806c340",
+      "bytes": 6933,
+      "words": 888
+    },
+    {
+      "path": "output/outcome_scorecard.md",
+      "page": "output-outcome-scorecard-md.html",
+      "sha256": "ac5e63d220fbe3813177b2b001cfa39ee581bc77bc7a6e3f75bb13aaa30555e2",
+      "bytes": 2562,
+      "words": 297
+    },
+    {
+      "path": "docs/platform_integration.md",
+      "page": "docs-platform-integration-md.html",
+      "sha256": "4ecb34a5549b622f5377f69c84f9d25b8a15a33705b0f01aab3e271df5558ae7",
+      "bytes": 5998,
+      "words": 835
+    },
+    {
+      "path": "docs/demo_walkthrough.md",
+      "page": "docs-demo-walkthrough-md.html",
+      "sha256": "bb8ca6ac0dac2f5125c715f17589089d6191c670a181093307a0b6a76994b175",
+      "bytes": 2384,
+      "words": 340
+    },
+    {
+      "path": "case-study/methodology.md",
+      "page": "case-study-methodology-md.html",
+      "sha256": "48d772118a14a589acb1809dcf464cde7b106be7d131a222c767498b38e7e140",
+      "bytes": 4961,
+      "words": 676
+    },
+    {
+      "path": "case-study/questionnaire.md",
+      "page": "case-study-questionnaire-md.html",
+      "sha256": "7e3e8c6c6c400f97e8b23f21b6652ff05fa9ece3d15e924437aa97509efe9bfd",
+      "bytes": 2676,
+      "words": 360
+    },
+    {
+      "path": "case-study/feedback_template.md",
+      "page": "case-study-feedback-template-md.html",
+      "sha256": "3f657448cb460d80facca62263be7d29f400c726135f32f96f91a2c630cf5279",
+      "bytes": 667,
+      "words": 90
+    },
+    {
+      "path": "case-study/evidence-packet/E01_iso_certificate_summary.md",
+      "page": "case-study-evidence-packet-e01-iso-certificate-summary-md.html",
+      "sha256": "fbfc2431da7337634388fcecf0fd659c4a70da35671d5ef265de0e9df52b2ce6",
+      "bytes": 1607,
+      "words": 209
+    },
+    {
+      "path": "case-study/evidence-packet/E02_bridge_letter.md",
+      "page": "case-study-evidence-packet-e02-bridge-letter-md.html",
+      "sha256": "96f69a5a1c036d7bf1a6fcaf852158b811800bfd559a753c37b77beba50308c3",
+      "bytes": 1271,
+      "words": 166
+    },
+    {
+      "path": "case-study/evidence-packet/E02_soc2_type2_excerpt.md",
+      "page": "case-study-evidence-packet-e02-soc2-type2-excerpt-md.html",
+      "sha256": "51411d4a3c0788a82e2f5fdce5ce84526cca5c49b491b5019fbacf433b0ef65a",
+      "bytes": 2453,
+      "words": 331
+    },
+    {
+      "path": "case-study/evidence-packet/E03_customer_cuec_mfa.md",
+      "page": "case-study-evidence-packet-e03-customer-cuec-mfa-md.html",
+      "sha256": "40377fe9debd6d88537ef65834cc5a5488ede13057e3acef08935333a85977a4",
+      "bytes": 1029,
+      "words": 126
+    },
+    {
+      "path": "case-study/evidence-packet/E04_access_policy_summary.md",
+      "page": "case-study-evidence-packet-e04-access-policy-summary-md.html",
+      "sha256": "a1ab15806abb1b67c67de8fbcc273bf74cb8a8d83ed4c78a2a75b1d597b7e1f3",
+      "bytes": 892,
+      "words": 107
+    },
+    {
+      "path": "case-study/evidence-packet/README.md",
+      "page": "case-study-evidence-packet-readme-md.html",
+      "sha256": "6ab992e189f3664d566af8d78cfb9c36530156812816c56a853cbaebfe037205",
+      "bytes": 1648,
+      "words": 204
+    }
+  ]
+}

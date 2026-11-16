@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Assessment questionnaire | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link active" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Working papers <span>·</span> Synthetic case study</div><h1>Assessment questionnaire</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/case-study/questionnaire.md">case-study/questionnaire.md</a></span><span>360 words · SHA-256 <code>7e3e8c6c6c400f97…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><p><strong>SYNTHETIC TRAINING DATA.</strong> HarborPay Demo, its payroll service, evidence, roles, dates, and control states are fictional. This questionnaire is a study aid, not a supplier attestation, audit opinion, certification, or legal determination.</p>
+<p>Assessment date: <strong>16 November 2026</strong><br>
+In-scope service: <strong>Payroll processing SaaS</strong><br>
+Data: <strong>Employee identity, payroll, and bank account details</strong><br>
+Proposed criticality: <strong>High, subject to reviewer confirmation</strong></p>
+<p>For every response, cite an evidence ID/version, state what it demonstrates, identify uncertainty, and assign an owner or follow-up where needed. “Not provided” and “not verified” do not mean “passed.”</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Review question</th>
+<th>Case evidence</th>
+<th>Initial reviewer prompt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Is the service and its data use clear enough to determine the review scope and business impact?</td>
+<td>Vendor/service description in <code>data.json</code></td>
+<td>Confirm payroll is the service assessed and employee/bank data are in scope. Identify the business owner.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Is the security policy evidence present, owned, approved, and relevant to payroll?</td>
+<td>E04</td>
+<td>Verify the named owner, approval date, review frequency, and service scope. Do not infer that the policy was followed in practice.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Is current ISO assurance evidence available, authentic, and in scope?</td>
+<td>E01</td>
+<td>Check stated entity, service, expiry, and verification limitations. Request current authenticated evidence; do not equate an expired date with a control failure.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Does the assurance summary cover payroll and the relevant service boundary?</td>
+<td>E02; simulated retest E02-v2</td>
+<td>Compare included/excluded services with the contracted payroll scope. Distinguish the synthetic scope test from an actual auditor-issued SOC report.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which customer-operated controls are required, and are they met?</td>
+<td>E03; simulated retest E03-v2</td>
+<td>Identify the customer owner, covered privileged accounts, initial mock state, and evidence needed for a real verification.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>What decision, treatment, owner, due date, and reassessment trigger are justified?</td>
+<td>Findings and reviewer notes</td>
+<td>Explain likelihood/impact with evidence. State remaining uncertainty and obtain human approval for acceptance or onboarding.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reassessment-notes">Reassessment notes</h2>
+<p>Keep v1 evidence intact. Review E02-v2 and E03-v2 against their original gap, recording the reviewer, date, rationale, and resulting status. Leave CERT-EXPIRY open until current evidence is supplied and independently checked. A changed synthetic field only tests the lab workflow; it does not prove a vendor or customer system was remediated.</p></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

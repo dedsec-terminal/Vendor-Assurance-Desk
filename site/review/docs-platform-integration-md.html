@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>GRC platform integration | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link active" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Platform <span>·</span> Synthetic case study</div><h1>GRC platform integration</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/docs/platform_integration.md">docs/platform_integration.md</a></span><span>835 words · SHA-256 <code>4ecb34a5549b622f…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><h2 id="what-it-adds">What it adds</h2>
+<p>The synthetic HarborPay supplier case now has a native <strong>Findings Assessment</strong> in CISO Assistant, with three native <strong>Finding</strong> records, their proposed remediation text, links to the applicable seeded <strong>Applied Controls</strong>, and links to synthetic <strong>Evidence</strong> inventory records. The existing supplier <strong>Entity Assessment</strong> remains <code>in_review</code>; the product model has no direct EntityAssessment-to-FindingsAssessment relation, so the records are related by matching supplier context and provenance rather than claiming a native foreign-key association. Each of the ten scoped supplier controls stays <code>to_do</code>. Findings remain identified, severity is undefined, and the evidence objects are explicitly <code>missing</code> because no authentic vendor artifacts were supplied. The recommendation remains <strong>hold onboarding</strong> and human approval remains pending.</p>
+<p>These object types follow the product's native model instead of representing issues as completed controls or risk acceptances. This is a local, synthetic workflow demonstration. It does not establish enterprise GRC platform implementation experience, a production deployment, an actual supplier decision, or an audit opinion.</p>
+<h2 id="provenance-and-safety">Provenance and safety</h2>
+<p>The sync consumes only <code>output/assessment.json</code> and <code>output/control_review.json</code>, mounted read-only into the backend. It hashes parsed JSON using canonical JSON serialization (<code>canonical-json-v1</code>) so Windows and Linux line endings produce the same digest, then records those hashes in each managed finding's observation and the Findings Assessment description. Each attached Evidence item says it is a synthetic inventory placeholder and is created in <code>missing</code> state without an attachment. The deterministic <code>VAD-SYN-</code> references make repeated syncs idempotent.</p>
+<p>The integration fails closed if the case stops being fictional, its recommendation changes, the scoped records are absent, or an existing managed record's fields or relations no longer match the integration's expected state. It does not update existing findings in place, overwrite manual edits, mark a control effective, close a finding, approve evidence, or accept risk. If the source or a managed record changes, investigate and reconcile deliberately rather than rerunning blindly.</p>
+<h2 id="run-against-the-local-docker-stack">Run against the local Docker stack</h2>
+<p>From the repository root in PowerShell:</p>
+<pre><code class="language-powershell">$repo = (Resolve-Path .).Path
+$linuxRepo = '/mnt/' + $repo.Substring(0, 1).ToLowerInvariant() + '/' + $repo.Substring(3).Replace('\', '/')
+$stage = &quot;docker run --rm --volumes-from backend:rw -v '$linuxRepo/scripts:/scripts:ro' -v '$linuxRepo/output:/input:ro' alpine:3.23 sh -c 'mkdir -p /code/db/vad_data &amp;&amp; cp /scripts/docker_sync_assessment.py /scripts/docker_verify_sync.py /scripts/docker_test_sync_safety.py /code/db/ &amp;&amp; cp /input/assessment.json /input/control_review.json /code/db/vad_data/'&quot;
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc $stage
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_sync_assessment.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_verify_sync.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_test_sync_safety.py'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc 'docker exec backend python /code/db/docker_verify_sync.py &gt;/dev/null 2&gt;&amp;1'
+wsl.exe -d Ubuntu-24.04 -u root -- bash -lc &quot;docker exec backend cat /tmp/platform_sync.json &gt; '$linuxRepo/output/platform_sync.json'&quot;
+</code></pre>
+<p>Run the sync command again, then the verification command again. The second sync should report zero created and three unchanged findings. <code>docker_test_sync_safety.py</code> checks that a changed supplier identity is rejected, a same-count wrong evidence link fails exact-link verification, and a manual finding status edit is preserved while sync refuses to overwrite it; test mutations run inside rolled-back database transactions. The verifier emits a canonical record snapshot digest; it should be identical across readbacks when records have not changed. It exits nonzero on detected drift. The repo's ignored private Docker credentials are not read or printed by these commands.</p>
+<h2 id="native-object-mapping">Native object mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Training case item</th>
+<th>CISO Assistant object</th>
+<th>Treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vendor due-diligence review</td>
+<td>Existing <code>EntityAssessment</code></td>
+<td>Preserved in review; no direct FK to findings register in upstream model</td>
+</tr>
+<tr>
+<td>Findings register</td>
+<td><code>FindingsAssessment</code></td>
+<td>Stable ref <code>VAD-SYN-FINDINGS-HPD-2026-001</code>, in review; linked by case/supplier context</td>
+</tr>
+<tr>
+<td>Expired assurance metadata</td>
+<td><code>Finding</code></td>
+<td>Identified, undefined severity; maps to <code>TPRM-REV-01</code></td>
+</tr>
+<tr>
+<td>Assurance scope mismatch</td>
+<td><code>Finding</code></td>
+<td>Identified, undefined severity; maps to <code>TPRM-REV-01</code> and <code>TPRM-SUP-01</code></td>
+</tr>
+<tr>
+<td>Customer-operated MFA condition</td>
+<td><code>Finding</code></td>
+<td>Identified, undefined severity; maps to <code>TPRM-IAM-01</code>; not attributed to vendor controls</td>
+</tr>
+<tr>
+<td>Synthetic baseline/retest evidence references</td>
+<td><code>Evidence</code></td>
+<td><code>missing</code>, synthetic inventory only, no attachment; linked to finding</td>
+</tr>
+<tr>
+<td>Proposed next steps</td>
+<td>Finding recommendation</td>
+<td>Human action required; no automatic closure</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>TPRM-*</code> questions retain their proposed NIST CSF 2.0 and ISO/IEC 27001:2022 references as scoping aids. They are not native control mappings to verified framework catalog records, and no compliance equivalence is claimed.</p>
+<h2 id="verification-limits">Verification limits</h2>
+<p>The verifier checks counts, states, link targets, input hashes, and a stable digest of the read-back records. A repeat run tests idempotence and supports detection of manual drift; it is not a concurrency lock against another writer changing the database between separate command runs. All supplier data and evidence are fictional. A hiring résumé may describe this as a local CISO Assistant integration prototype with native findings, remediation, evidence-state and control relationships—not as client GRC implementation or verified vendor assurance.</p></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

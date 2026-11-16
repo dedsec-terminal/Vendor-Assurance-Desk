@@ -45,8 +45,22 @@ const { chromium } = require(packagePath);
   }
   assert.equal((await page.request.get(base + '/case-study/data.json')).status(), 404);
   assert.equal((await page.request.get(base + '/platform/.local/credentials.json')).status(), 404);
+  assert.equal((await page.request.get(base + '/review/%2e%2e/%2e%2e/docker/runtime/.private/admin_credentials.txt')).status(), 404);
+  await page.locator('.review-link').click();
+  await page.locator('#search').waitFor();
+  const readerManifest = await (await page.request.get(base + '/review/source-manifest.json')).json();
+  assert.ok(readerManifest.sources.length >= 14);
+  for (const source of readerManifest.sources) {
+    assert.match(source.sha256, /^[a-f0-9]{64}$/);
+    assert.equal((await page.request.get(base + '/review/' + source.page)).status(), 200, source.path);
+  }
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true);
+  await page.locator('#search').fill('stakeholder');
+  assert.equal(await page.locator('.cards .card:not(.search-hidden)').count(), 2);
+  await page.locator('.cards .card[href*="stakeholder-brief"]').click();
+  assert.match(await page.locator('.markdown-body').innerText(), /hold production onboarding/i);
   assert.deepEqual(errors, []);
-  fs.writeFileSync(path.join(output, 'browser_validation.json'), JSON.stringify({passed:true, views:6, responsive:true, console_errors:errors, downloads:4, private_paths_denied:2}, null, 2));
+  fs.writeFileSync(path.join(output, 'browser_validation.json'), JSON.stringify({passed:true, views:6, responsive:true, console_errors:errors, downloads:4, private_paths_denied:3, review_sources:readerManifest.sources.length, reader_search:true}, null, 2));
   await browser.close();
-  console.log('Browser checks passed: 6 views, mobile layout, retest statuses, downloads and private-path isolation.');
+  console.log('Browser checks passed: 6 views, review reader and search, mobile layout, retest statuses, downloads and private-path isolation.');
 })().catch(error => {console.error(error); process.exit(1);});

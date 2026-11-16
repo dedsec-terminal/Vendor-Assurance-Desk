@@ -4,5 +4,7 @@
   "responsive": true,
   "console_errors": [],
   "downloads": 4,
-  "private_paths_denied": 2
+  "private_paths_denied": 3,
+  "review_sources": 14,
+  "reader_search": true
 }

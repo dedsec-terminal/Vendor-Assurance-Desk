@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Outcome scorecard | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link active" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Results <span>·</span> Synthetic case study</div><h1>Outcome scorecard</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/output/outcome_scorecard.md">output/outcome_scorecard.md</a></span><span>297 words · SHA-256 <code>ac5e63d220fbe381…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><p><strong>Case:</strong> <code>HPD-2026-001</code><br>
+<strong>Assessment input SHA-256:</strong> <code>b54cc937f485ee5b0324fb436a34519e191865c1686565cefeb859c92a0172b4</code></p>
+<blockquote>
+<p>Training fixture only: one fictional vendor, four selected metadata checks and three small ITGC tests. No overall maturity score is calculated.</p>
+</blockquote>
+<h2 id="assurance-metadata-retest">Assurance metadata retest</h2>
+<p>Selected checks with a gap: <strong>3/4 baseline → 1/4 retest</strong> (net gap delta <strong>-2</strong>). This is a change in fixture check results, not a risk reduction claim.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Baseline</th>
+<th>Retest</th>
+<th>Evidence (baseline → retest)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CERT-EXPIRY</td>
+<td>gap</td>
+<td>gap</td>
+<td><code>E01</code> → <code>E01</code></td>
+</tr>
+<tr>
+<td>ASSURANCE-SCOPE</td>
+<td>gap</td>
+<td>pass</td>
+<td><code>E02</code> → <code>E02-v2</code></td>
+</tr>
+<tr>
+<td>CUSTOMER-MFA</td>
+<td>gap</td>
+<td>pass</td>
+<td><code>E03</code> → <code>E03-v2</code></td>
+</tr>
+<tr>
+<td>POLICY-CHECK</td>
+<td>pass</td>
+<td>pass</td>
+<td><code>E04</code> → <code>E04</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="finding-follow-up-fields">Finding follow-up fields</h2>
+<p>Owner present: <strong>3/3</strong> · due date present: <strong>3/3</strong> · baseline and retest evidence hashes present: <strong>3/3</strong>.</p>
+<h2 id="itgc-exception-retest">ITGC exception retest</h2>
+<p>Exceptions: <strong>3 baseline → 2 retest</strong> (delta <strong>-1</strong>). Current exposure remains unresolved in <strong>1/3</strong> selected control(s); <strong>2</strong> historical exception record(s) remain in the retest history.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th style="text-align: right;">Baseline exceptions</th>
+<th style="text-align: right;">Retest exceptions</th>
+<th>Current exposure resolved</th>
+<th>Historical exception IDs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ITGC-ACCESS</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>True</td>
+<td>ACC-101</td>
+</tr>
+<tr>
+<td>ITGC-CHANGE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>False</td>
+<td>CHG-201</td>
+</tr>
+<tr>
+<td>ITGC-BACKUP</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td>True</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grc-platform-record-links">GRC platform record links</h2>
+<p>Status: <strong>verified</strong> — Identity and input hash match; platform worker verified the linked records.</p>
+<table>
+<thead>
+<tr>
+<th>Platform measure</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vendor records</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Service records</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Assessment records</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Finding-to-control link relationships (not unique controls)</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Linked finding records</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Linked evidence records</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Distinct configured control records represented by those links</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Total supplier-scope control records configured for the assessment</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Finding-to-control link count is separate from distinct configured controls and total supplier-scope controls.</p>
+<h2 id="human-review">Human review</h2>
+<p>Peer feedback: <strong>Pending peer review</strong> · reviewer closures: <strong>0</strong> · final onboarding decision: <strong>Pending</strong>.</p>
+<h2 id="scope-and-limits">Scope and limits</h2>
+<ul>
+<li>All records are fictional training data.</li>
+<li>One vendor, four selected metadata checks, and three small ITGC tests only.</li>
+<li>Passing a selected retest is not authentication, assurance, operating-effectiveness evidence, or approval.</li>
+<li>Counts describe this fixture only; no time savings, risk reduction, or business outcome is inferred.</li>
+</ul></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

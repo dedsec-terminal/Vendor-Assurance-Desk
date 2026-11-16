@@ -1,0 +1,127 @@
+{
+  "case_id": "HPD-2026-001",
+  "input_sha256": "b54cc937f485ee5b0324fb436a34519e191865c1686565cefeb859c92a0172b4",
+  "scope": {
+    "vendors": 1,
+    "metadata_checks": 4,
+    "itgc_controls": 3,
+    "synthetic_only": true,
+    "overall_maturity_score": null
+  },
+  "metadata_check_outcomes": {
+    "baseline_gaps": 3,
+    "retest_gaps": 1,
+    "gap_delta": -2,
+    "checks": [
+      {
+        "check_id": "CERT-EXPIRY",
+        "baseline": "gap",
+        "retest": "gap",
+        "gap_delta": 0,
+        "baseline_evidence_id": "E01",
+        "baseline_evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5",
+        "retest_evidence_id": "E01",
+        "retest_evidence_sha256": "8cfb06c33cae6c413c430b8377639a7aa7b0b78f86a311bae74e9747a5f58ee5"
+      },
+      {
+        "check_id": "ASSURANCE-SCOPE",
+        "baseline": "gap",
+        "retest": "pass",
+        "gap_delta": -1,
+        "baseline_evidence_id": "E02",
+        "baseline_evidence_sha256": "c29974a4666b826576f0fa047ec441721ee9c448467dcd80743557622d8dcf7f",
+        "retest_evidence_id": "E02-v2",
+        "retest_evidence_sha256": "6098844610dbbabd2b0c75a3cf547c4201ef1f01c1b201ee7d51ff2298a4ae70"
+      },
+      {
+        "check_id": "CUSTOMER-MFA",
+        "baseline": "gap",
+        "retest": "pass",
+        "gap_delta": -1,
+        "baseline_evidence_id": "E03",
+        "baseline_evidence_sha256": "182f8422e3ceb776436b3d54aecdc22025afa7b4698f292e7c36c6cf55faec72",
+        "retest_evidence_id": "E03-v2",
+        "retest_evidence_sha256": "fbe67cba57fce25996d97fdc5bccd2781056dd5d63d097de0370182040a4b017"
+      },
+      {
+        "check_id": "POLICY-CHECK",
+        "baseline": "pass",
+        "retest": "pass",
+        "gap_delta": 0,
+        "baseline_evidence_id": "E04",
+        "baseline_evidence_sha256": "bda65b108258c41021e66f6ed32174fc40fc234ae2f42e653d207115e3a97780",
+        "retest_evidence_id": "E04",
+        "retest_evidence_sha256": "bda65b108258c41021e66f6ed32174fc40fc234ae2f42e653d207115e3a97780"
+      }
+    ]
+  },
+  "finding_follow_up_coverage": {
+    "findings": 3,
+    "owner_present": 3,
+    "due_date_present": 3,
+    "evidence_hash_present": 3
+  },
+  "itgc_outcomes": {
+    "baseline_exception_count": 3,
+    "retest_exception_count": 2,
+    "exception_delta": -1,
+    "current_exposures_unresolved": 1,
+    "historical_exceptions_preserved": 2,
+    "current_exposures_unresolved_at_baseline": 3,
+    "controls": [
+      {
+        "control_id": "ITGC-ACCESS",
+        "baseline_exceptions": 1,
+        "retest_exceptions": 1,
+        "current_exposure_resolved": true,
+        "historical_exception_ids": [
+          "ACC-101"
+        ]
+      },
+      {
+        "control_id": "ITGC-CHANGE",
+        "baseline_exceptions": 1,
+        "retest_exceptions": 1,
+        "current_exposure_resolved": false,
+        "historical_exception_ids": [
+          "CHG-201"
+        ]
+      },
+      {
+        "control_id": "ITGC-BACKUP",
+        "baseline_exceptions": 1,
+        "retest_exceptions": 0,
+        "current_exposure_resolved": true,
+        "historical_exception_ids": []
+      }
+    ]
+  },
+  "human_review": {
+    "status": "Pending peer review",
+    "reviewer_closures": 0,
+    "onboarding_decision": "Pending"
+  },
+  "platform_roundtrip": {
+    "status": "verified",
+    "reason": "Identity and input hash match; platform worker verified the linked records.",
+    "service_id": "VAD-SYN-SVC-001",
+    "assessment_id": "3aa58c6f-f2a4-4196-a5cd-96e610b96dd9",
+    "evidence_sha256": null,
+    "counts": {
+      "vendor": 1,
+      "service": 1,
+      "assessment": 1,
+      "applied_controls": 4,
+      "findings": 3,
+      "evidence": 5,
+      "unique_applied_controls": 3,
+      "supplier_scope_controls": 10
+    }
+  },
+  "limitations": [
+    "All records are fictional training data.",
+    "One vendor, four selected metadata checks, and three small ITGC tests only.",
+    "Passing a selected retest is not authentication, assurance, operating-effectiveness evidence, or approval.",
+    "Counts describe this fixture only; no time savings, risk reduction, or business outcome is inferred."
+  ]
+}

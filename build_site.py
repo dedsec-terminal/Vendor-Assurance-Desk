@@ -2,12 +2,14 @@
 from pathlib import Path
 import json
 import shutil
+from scripts.build_review_reader import build as build_review_reader
 
 ROOT = Path(__file__).resolve().parent
 PUBLIC_OUTPUTS = (
     "assessment.json", "results.json", "risk_register.csv", "decision_memo.md",
     "control_review.json", "control_matrix.csv", "unit_validation.json", "browser_validation.json",
     "ciso_entities.png",
+    "outcome_scorecard.json", "outcome_scorecard.md", "platform_sync.json",
 )
 
 
@@ -27,6 +29,7 @@ def build():
     assessment["platform"] = {k: v for k, v in assessment.get("platform", {}).items() if k in platform_keys}
     assessment_path.write_text(json.dumps(assessment, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (site / ".nojekyll").write_text("", encoding="utf-8")
+    build_review_reader()
     print(f"Static portfolio viewer built: {site}")
 
 

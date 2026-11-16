@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Synthetic third-party risk assessment evidence and decision review packet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<title>Decision brief | Vendor Assurance Desk</title><link rel="stylesheet" href="reader.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="layout"><aside class="sidebar" aria-label="Review documents"><a class="brand" href="index.html"><span class="brand-mark">VA</span><span>Vendor Assurance Desk<small>Evidence review packet</small></span></a><a class="back" href="../index.html">← Back to project</a><label class="search-label" for="search">Find a document</label><input id="search" type="search" placeholder="Search documents…" autocomplete="off" aria-controls="nav-list"><nav id="nav-list"><div class="nav-group"><div class="nav-heading">Assessment</div><a class="nav-link" href="docs-due-diligence-review-md.html">Supplier due diligence review</a><a class="nav-link active" href="docs-stakeholder-brief-md.html">Decision brief</a></div><div class="nav-group"><div class="nav-heading">Results</div><a class="nav-link" href="output-outcome-scorecard-md.html">Outcome scorecard</a></div><div class="nav-group"><div class="nav-heading">Platform</div><a class="nav-link" href="docs-platform-integration-md.html">GRC platform integration</a></div><div class="nav-group"><div class="nav-heading">Guide</div><a class="nav-link" href="docs-demo-walkthrough-md.html">Review walkthrough</a></div><div class="nav-group"><div class="nav-heading">Methodology</div><a class="nav-link" href="case-study-methodology-md.html">Review methodology</a></div><div class="nav-group"><div class="nav-heading">Working papers</div><a class="nav-link" href="case-study-questionnaire-md.html">Assessment questionnaire</a><a class="nav-link" href="case-study-feedback-template-md.html">Stakeholder feedback record</a></div><div class="nav-group"><div class="nav-heading">Evidence</div><a class="nav-link" href="case-study-evidence-packet-e01-iso-certificate-summary-md.html">E01 — ISO/IEC 27001 certificate claim (synthetic summary)</a><a class="nav-link" href="case-study-evidence-packet-e02-bridge-letter-md.html">E02-B — management bridge-letter scenario (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e02-soc2-type2-excerpt-md.html">E02 — SOC 2 Type II-style summary (synthetic exercise exhibit)</a><a class="nav-link" href="case-study-evidence-packet-e03-customer-cuec-mfa-md.html">E03 — customer-operated privileged MFA CUEC (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-e04-access-policy-summary-md.html">E04 — access control policy summary (synthetic)</a><a class="nav-link" href="case-study-evidence-packet-readme-md.html">HarborPay Demo evidence packet</a></div></nav></aside><main id="main" class="article"><div class="eyebrow">Assessment <span>·</span> Synthetic case study</div><h1>Decision brief</h1><div class="sourcebar"><span>Source: <a href="https://github.com/dedsec-terminal/Vendor-Assurance-Desk/blob/main/docs/stakeholder_brief.md">docs/stakeholder_brief.md</a></span><span>888 words · SHA-256 <code>3a3e1dc38efc2443…</code></span></div><div class="provenance">Training fixture only. HarborPay Demo, evidence, dates, roles, and findings are fictional. This packet supports a simulated human review; it is not a real vendor decision or assurance opinion.</div><article class="markdown-body"><p><strong>Synthetic portfolio exercise · 16 November 2026 · Draft, approval pending</strong><br>
+All organizations, evidence, dates, roles and facts are fictional. This brief is not an actual vendor decision, audit, or supplier assurance opinion.</p>
+<h2 id="executive-view">Executive view</h2>
+<p><strong>Recommendation: hold production onboarding while decision-critical evidence is obtained and reviewed.</strong> The proposed payroll SaaS would process employee identities, payroll details and bank-account data. The lab assigns it High criticality because of that sensitivity and operational dependency; the business owner must validate the tier. The evidence packet does not establish current, authentic assurance for the payroll service. The first SOC-style summary explicitly excludes payroll; its revised version changes a synthetic scope field only. The ISO certificate metadata is expired and unauthenticated. Separately, the customer-owned privileged MFA requirement is disabled in the initial mock state; a revised mock is not real configuration evidence.</p>
+<p>This recommendation identifies evidence uncertainty, not proof of compromise or control failure. Onboarding could be reconsidered after current in-scope independent assurance—or a security-reviewer-validated alternative evidence package proportionate to the service—is reviewed, contractual/privacy and subprocessor diligence is complete, customer MFA is demonstrated, and continuity/incident obligations are reviewed. An ISO certificate alone would not answer operational-control, contract, subprocessor or continuity questions. Any conditional exception requires an accountable human risk owner's approval, compensating safeguards, time limits and escalation/stop criteria. Only an authorized business risk owner can approve onboarding or accept residual risk.</p>
+<h3 id="options">Options</h3>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Benefit</th>
+<th>Main condition / trade-off</th>
+<th>Current fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approve onboarding</td>
+<td>Supports service start</td>
+<td>Requires current in-scope independent assurance or a reviewer-validated alternative evidence package, material terms and controls, and explicit risk authority</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Conditional onboarding</td>
+<td>May permit bounded progress</td>
+<td>Needs approved restrictions, minimum controls, compensating safeguards, clear deadlines, monitoring and stop criteria; exception requires accountable human approval</td>
+<td>A future option after evidence review</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>Prevents production reliance while material unknowns are resolved</td>
+<td>May delay the service; owner should confirm business impact and alternatives</td>
+<td>Recommended now</td>
+</tr>
+</tbody>
+</table>
+<h2 id="technical-view-for-security-procurement-and-service-owners">Technical view for security, procurement and service owners</h2>
+<ol>
+<li><strong>Assurance boundary:</strong> E02 v1 is a fictional Type II-style summary for a support portal only and excludes payroll. A Type II period ending 30 September is not current assurance for later operation. The actual report, opinion, criteria, tests, exceptions and management responses are absent. E02-v2 is a workflow fixture, not a report revision.</li>
+<li><strong>Downstream services and customer conditions:</strong> no subservice organization list or inclusive/carve-out method is supplied. Obtain the actual report schedules and map material hosting dependencies. Review CUECs; the E03 MFA requirement is explicitly customer-operated in this case and must not be charged as a vendor failure.</li>
+<li><strong>Bridge gap:</strong> E02-B is only a hypothetical management statement. A real bridge letter could describe management's view of changes but would not extend the independent examination or test controls after the report period. Verify signatory authority and corroborate incidents and material changes.</li>
+<li><strong>ISO claim:</strong> E01's stated 31 October 2026 expiry predates the review. Its issuer, accreditation chain, certificate number and authoritative status are missing. Validate current record, entity, sites, exact ISMS scope and exclusions. Expiry is an assurance gap, not breach evidence.</li>
+<li><strong>Other diligence:</strong> E04 says a policy exists but includes no operating samples. Obtain workforce-access and change evidence, logging/incident handling, service-specific backup/restore tests, contract/security schedule and DPA, data locations, subprocessors, incident terms, deletion/return and exit plan.</li>
+</ol>
+<h2 id="proposed-actions">Proposed actions</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Action</th>
+<th>Proposed accountable role</th>
+<th>Proposed timing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision gate</td>
+<td>Obtain genuine, current, in-scope assurance; review opinion, test results, exceptions, carve-outs and CUECs; verify ISO claim</td>
+<td>Vendor relationship owner + security reviewer</td>
+<td>Before decision</td>
+</tr>
+<tr>
+<td>Customer prerequisite</td>
+<td>Verify MFA enforcement on the full privileged customer account population, including exceptions and emergency accounts</td>
+<td>Customer IAM owner</td>
+<td>Before privileged use</td>
+</tr>
+<tr>
+<td>Contract/data</td>
+<td>Review agreement, security schedule and DPA for incident notice, audit evidence, data use/location, subprocessor changes, retention/deletion and exit</td>
+<td>Procurement/legal + privacy</td>
+<td>Before contract/production</td>
+</tr>
+<tr>
+<td>Operational resilience</td>
+<td>Review service-specific incident/continuity plans, contacts, exercise evidence, restore tests, RTO/RPO and dependencies</td>
+<td>Vendor and customer service owners</td>
+<td>Before production</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>Confirm criticality, accountable acceptance authority, action owners, reassessment triggers and review date</td>
+<td>Payroll service owner + risk owner</td>
+<td>Before disposition</td>
+</tr>
+</tbody>
+</table>
+<p>The target dates in the detailed review are proposed exercise dates and have not been agreed by any supplier or stakeholder. Residual risk remains <strong>unassessed</strong> until the missing evidence is reviewed.</p>
+<h2 id="five-minute-presentation-outline">Five-minute presentation outline</h2>
+<ol>
+<li><strong>0:00–0:45 — Service and decision:</strong> explain payroll dependency, sensitive data, proposed High tier and ask for a hold/decision-owner discussion.</li>
+<li><strong>0:45–2:00 — Evidence quality:</strong> show E01 expiry/authentication gap and E02 scope mismatch; distinguish the v2 mock from authentic assurance.</li>
+<li><strong>2:00–3:00 — Shared responsibility and unknowns:</strong> clarify customer MFA, bridge-letter limit, subservice carve-out and absent contract/DPA/continuity evidence.</li>
+<li><strong>3:00–4:15 — Risk and options:</strong> explain the plausible compromise/disruption scenario, qualitative inherent rating and why residual risk cannot yet be rated; compare approve/conditional/hold.</li>
+<li><strong>4:15–5:00 — Decisions requested:</strong> confirm business criticality, evidence owners, contract gate, customer MFA owner and authorized decision maker; record questions and follow-up actions.</li>
+</ol>
+<h2 id="feedback-record">Feedback record</h2>
+<p><strong>External stakeholder feedback: pending.</strong> No client, peer, mentor, or hiring-team presentation has occurred as part of this artifact. Record real questions, requested evidence, changes made and unresolved disagreements in <a href="case-study-feedback-template-md.html"><code>../case-study/feedback_template.md</code></a> only after an actual review. AI review or this presentation outline is not stakeholder feedback.</p></article><footer><a href="index.html">Review packet index</a><span>Source hash recorded in <a href="source-manifest.json">manifest</a></span></footer></main></div>
+<script src="reader.js" defer></script></body></html>

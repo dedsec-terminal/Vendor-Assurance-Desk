@@ -1,6 +1,6 @@
 # Vendor Assurance Desk
 
-**[Open the live dashboard](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/) · [Read the decision memo](output/decision_memo.md) · [Follow the walkthrough](docs/demo_walkthrough.md)**
+**[Open the live dashboard](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/) · [Read the due-diligence case](https://dedsec-terminal.github.io/Vendor-Assurance-Desk/site/review/) · [Follow the walkthrough](docs/demo_walkthrough.md)**
 
 A practical third-party cyber-risk case study: decide whether a fictional payroll supplier can be onboarded, explain the evidence gaps, assign responsibilities and reassess revised evidence.
 
@@ -8,7 +8,13 @@ This project uses the completed open-source **CISO Assistant** GRC platform as i
 
 The assessment runner and dashboard use one explicitly synthetic case with four baseline assurance records and two revisions, a ten-question supplier-control catalog and selected ITGC tests. The full local **CISO Assistant Community v4.3.2** Docker stack is running, with one supplier, one payroll service, one assessment and ten control records configured. The assessment remains `in_review` and controls remain `to_do`; peer feedback and the human onboarding decision remain pending.
 
-Verification includes **28 passing unit tests**, browser checks across all six views, three detected seeded assurance gaps with no clean-policy finding, and three detected ITGC exceptions with no clean comparison rows flagged. These measurements describe the synthetic fixtures rather than production accuracy or real risk reduction.
+Verification includes automated regression tests, browser checks across all six views and the document reader, three detected seeded assurance gaps with no clean-policy finding, and three detected ITGC exceptions with no clean comparison rows flagged. The [outcome scorecard](output/outcome_scorecard.md) shows the selected assurance-check gaps moving from **3/4 to 1/4**, with both historical access and change exceptions preserved during retesting. These measurements describe the synthetic fixtures rather than production accuracy or real risk reduction.
+
+## Worked supplier review
+
+The [readable evidence packet](case-study/evidence-packet/README.md) includes original synthetic ISO certificate claims, a SOC 2 Type II-style summary, a management bridge-letter scenario, a customer MFA responsibility and a policy summary. The [due-diligence review](docs/due_diligence_review.md) follows the evidence through scope, period, opinion, exceptions, subservice organizations, customer responsibilities and unresolved questions. It maps all ten control questions to evidence, requested follow-up and accountable roles.
+
+The [stakeholder brief](docs/stakeholder_brief.md) compares approval, conditional onboarding and a hold. Its recommendation requests current independent assurance or a reviewer-validated alternative package proportionate to the service, plus customer controls, contract and continuity review. A bridge letter or certificate alone does not settle those questions. A five-minute presentation outline and feedback record are included; an actual peer presentation remains pending.
 
 ## Run the project
 
@@ -39,6 +45,12 @@ Authenticated browser verification confirmed that HarborPay Demo appears in the 
 
 ![HarborPay Demo configured in CISO Assistant](output/ciso_entities.png)
 
+### Native findings and evidence integration
+
+The Python review output is integrated into a native CISO Assistant Findings Assessment: **three findings, five evidence links and four finding-to-control relationships across three distinct controls**. All ten supplier-scope controls remain `to_do`, both assessment records remain `in_review`, and the onboarding recommendation remains a hold. Evidence inventory entries are marked `missing` because authentic supplier artifacts were not supplied; the source metadata and mock revisions remain explicitly synthetic.
+
+The [integration guide](docs/platform_integration.md) explains the native object relationships, repeatable commands and limits. The [verified read-back snapshot](output/platform_sync.json) records case identity, canonical JSON source hashes and exact evidence/control links. The supplier assessment and findings register share stable case context; upstream has no direct foreign-key relationship between those assessment types. Repeat syncs preserve existing records and reject unexpected changes instead of approving findings automatically.
+
 ## The decision this project supports
 
 HarborPay Demo would process employee identity and bank data. Its initial evidence contains an expired certificate record, an assurance summary excluding payroll, and an unmet customer-operated MFA requirement. A clean access-policy record provides a negative comparison.
@@ -61,6 +73,8 @@ The generated `output/results.json` is the source of measured counts. The initia
 
 The separate supplier ITGC lane identifies all three seeded access/change/backup exceptions and flags no clean comparison rows. Its retest retains the historical late-access and change-approval exceptions. Disabling current access does not erase a post-termination login; a new successful backup job does not rewrite the original failed job. These results are in `output/control_review.json`.
 
+The scorecard reports before/after check results, owner/due-date/evidence-hash coverage and verified platform record links with case and input-hash checks. It marks missing or mismatched platform snapshots as pending or invalid. Its deltas measure the fixture workflow; reviewer closures and human onboarding approval remain separate.
+
 ## Review the evidence yourself
 
 1. Read `case-study/questionnaire.md` and the individual fictional evidence notes.
@@ -80,6 +94,14 @@ The command records a self-declared local review; it does not authenticate the p
 
 ```powershell
 python -m unittest discover -s tests -v
+python scripts/build_scorecard.py
+```
+
+To build the static review reader as well as the dashboard, install the separate build dependency and run:
+
+```powershell
+python -m pip install -r requirements-build.txt
+python build_site.py
 ```
 
 The unit suite covers changed-vendor approvals, incorrect evidence identity, stale and malformed dates, missing evidence, clean controls, retest regressions, historical exceptions, ambiguous revisions and deterministic results. `tests/browser_smoke.cjs` checks the six views, responsive layout, downloads and denied private paths using Playwright. Set `PLAYWRIGHT_MODULE` and `PLAYWRIGHT_BROWSERS_PATH` for your installation when needed.

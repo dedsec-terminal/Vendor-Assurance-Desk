@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-11-16T17:27:14+00:00",
+  "generated_utc": "2026-11-16T17:30:14+00:00",
   "scope": "Explicit public Markdown review sources only; no recursive repository crawl.",
   "sources": [
     {
@@ -20,8 +20,8 @@
     {
       "path": "output/outcome_scorecard.md",
       "page": "output-outcome-scorecard-md.html",
-      "sha256": "ac5e63d220fbe3813177b2b001cfa39ee581bc77bc7a6e3f75bb13aaa30555e2",
-      "bytes": 2562,
+      "sha256": "481c2453e9d57701ae9706606b3918ba399f8f89eb136d4f44d025bc478361bb",
+      "bytes": 2503,
       "words": 297
     },
     {

@@ -14,6 +14,17 @@ jobs:
           python-version: '3.13'
       - name: Verify assessment and historical evidence rules
         run: python -m unittest discover -s tests -v
+      - name: Verify checked-in reader source hashes before rebuilding
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          manifest = json.loads(Path('site/review/source-manifest.json').read_text())
+          for item in manifest['sources']:
+              actual = hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()
+              assert actual == item['sha256'], item['path']
+          print(f"Verified {len(manifest['sources'])} published source hashes")
+          PY
       - name: Validate recorded native framework readback
         run: python scripts/validate_framework_snapshot.py
       - name: Install the static report renderer
